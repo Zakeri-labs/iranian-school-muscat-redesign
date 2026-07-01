@@ -69,7 +69,9 @@ function AdmissionsPage() {
       </Section>
 
       {/* Documents */}
-      <Section id="documents" className="bg-surface">
+      <div id="documents" />
+      <Section className="bg-surface">
+
         <div className="container mx-auto">
           <SectionTitle eyebrow="چک‌لیست" title="مدارک لازم" description="پیش از مراجعه یا ارسال، لطفاً مدارک زیر را آماده کنید." />
           <div className="grid md:grid-cols-2 gap-3">
