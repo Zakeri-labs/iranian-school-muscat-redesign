@@ -219,51 +219,72 @@ function Home() {
       </Section>
 
       {/* Admissions journey */}
-      <Section className="bg-surface !py-14 -mx-0">
-        <div className="container mx-auto">
-          <SectionTitle
-            eyebrow="ثبت‌نام"
-            title="مسیر ثبت‌نام در مجتمع"
-            description="در چهار گام ساده، ثبت‌نام فرزندتان را کامل کنید."
-          />
-          <div className="grid md:grid-cols-4 gap-4">
-            {[
-              {
-                n: 1,
-                t: "بررسی شرایط",
-                d: "شرایط پذیرش هر مقطع را مطالعه کنید.",
-                i: ClipboardCheck,
-              },
-              { n: 2, t: "آماده‌سازی مدارک", d: "چک‌لیست مدارک لازم را تکمیل کنید.", i: FileText },
-              { n: 3, t: "ارسال درخواست", d: "فرم ثبت‌نام را ثبت و مدارک را ارسال کنید.", i: Send },
-              {
-                n: 4,
-                t: "تأیید ثبت‌نام",
-                d: "پس از بررسی، تأییدیه به شما اعلام می‌شود.",
-                i: CheckCircle2,
-              },
-            ].map(({ n, t, d, i: Icon }) => (
-              <Card key={n} className="p-5 relative">
-                <div className="flex items-start justify-between">
-                  <div className="p-2.5 rounded-lg bg-brand-soft text-brand">
-                    <Icon className="size-5" />
-                  </div>
-                  <span className="text-2xl font-bold text-primary/20">۰{toFa(n)}</span>
-                </div>
-                <div className="mt-4 font-semibold text-primary">{t}</div>
-                <p className="text-sm text-muted-foreground mt-1 leading-6">{d}</p>
-              </Card>
-            ))}
+      <section className="bg-surface py-16">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-2xl text-center">
+            <SectionTitle
+              eyebrow="ثبت‌نام"
+              title="مسیر ثبت‌نام در مجتمع"
+              description="در چهار گام ساده، ثبت‌نام فرزندتان را کامل کنید."
+            />
           </div>
-          <div className="mt-6">
-            <Button asChild variant="outline">
+
+          <div className="relative mt-10">
+            <div className="absolute inset-x-[10%] top-12 hidden h-1 rounded-full bg-border lg:block" />
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  n: 1,
+                  t: "بررسی شرایط",
+                  d: "شرایط پذیرش هر مقطع را مطالعه کنید.",
+                  i: ClipboardCheck,
+                },
+                {
+                  n: 2,
+                  t: "آماده‌سازی مدارک",
+                  d: "چک‌لیست مدارک لازم را تکمیل کنید.",
+                  i: FileText,
+                },
+                {
+                  n: 3,
+                  t: "ارسال درخواست",
+                  d: "فرم ثبت‌نام را ثبت و مدارک را ارسال کنید.",
+                  i: Send,
+                },
+                {
+                  n: 4,
+                  t: "تأیید ثبت‌نام",
+                  d: "پس از بررسی، تأییدیه به شما اعلام می‌شود.",
+                  i: CheckCircle2,
+                },
+              ].map(({ n, t, d, i: Icon }) => (
+                <div key={n} className="relative">
+                  <div className="mx-auto flex size-24 items-center justify-center rounded-full border border-brand/20 bg-surface p-2">
+                    <div className="flex size-16 items-center justify-center rounded-2xl bg-brand text-brand-foreground shadow-sm">
+                      <Icon className="size-7" />
+                    </div>
+                  </div>
+                  <div className="mt-4 rounded-2xl border border-border bg-card p-5 text-center shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-md">
+                    <div className="mx-auto -mt-8 mb-4 flex size-9 items-center justify-center rounded-full bg-brand text-base font-bold text-brand-foreground shadow-sm ring-[3px] ring-card">
+                      {toFa(n)}
+                    </div>
+                    <h3 className="font-bold text-primary">{t}</h3>
+                    <p className="mt-2 min-h-12 text-sm leading-6 text-muted-foreground">{d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-8 flex justify-center">
+            <Button asChild className="bg-brand text-brand-foreground hover:bg-brand/90">
               <Link to="/admissions">
                 مشاهده راهنمای کامل ثبت‌نام <ChevronLeft className="size-4 mr-1" />
               </Link>
             </Button>
           </div>
         </div>
-      </Section>
+      </section>
 
       {/* Academic stages */}
       <Section>
