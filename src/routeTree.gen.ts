@@ -9,38 +9,416 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as PortalRouteImport } from './routes/portal'
+import { Route as OfficialLinksRouteImport } from './routes/official-links'
+import { Route as HonorsRouteImport } from './routes/honors'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as StagesIndexRouteImport } from './routes/stages.index'
+import { Route as NewsIndexRouteImport } from './routes/news.index'
+import { Route as AdmissionsIndexRouteImport } from './routes/admissions.index'
+import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as StagesMiddleRouteImport } from './routes/stages.middle'
+import { Route as StagesHighRouteImport } from './routes/stages.high'
+import { Route as StagesElementaryRouteImport } from './routes/stages.elementary'
+import { Route as ResourcesTeachersRouteImport } from './routes/resources.teachers'
+import { Route as ResourcesStudentsRouteImport } from './routes/resources.students'
+import { Route as ResourcesPoliciesRouteImport } from './routes/resources.policies'
+import { Route as ResourcesParentsRouteImport } from './routes/resources.parents'
+import { Route as ResourcesFormsRouteImport } from './routes/resources.forms'
+import { Route as NewsUpdatesRouteImport } from './routes/news.updates'
+import { Route as NewsCalendarRouteImport } from './routes/news.calendar'
+import { Route as AdmissionsTuitionRouteImport } from './routes/admissions.tuition'
+import { Route as AboutPrincipalRouteImport } from './routes/about.principal'
+import { Route as AboutMissionRouteImport } from './routes/about.mission'
+import { Route as AboutLeadershipRouteImport } from './routes/about.leadership'
 
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortalRoute = PortalRouteImport.update({
+  id: '/portal',
+  path: '/portal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfficialLinksRoute = OfficialLinksRouteImport.update({
+  id: '/official-links',
+  path: '/official-links',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HonorsRoute = HonorsRouteImport.update({
+  id: '/honors',
+  path: '/honors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StagesIndexRoute = StagesIndexRouteImport.update({
+  id: '/stages/',
+  path: '/stages/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsIndexRoute = NewsIndexRouteImport.update({
+  id: '/news/',
+  path: '/news/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissionsIndexRoute = AdmissionsIndexRouteImport.update({
+  id: '/admissions/',
+  path: '/admissions/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutIndexRoute = AboutIndexRouteImport.update({
+  id: '/about/',
+  path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StagesMiddleRoute = StagesMiddleRouteImport.update({
+  id: '/stages/middle',
+  path: '/stages/middle',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StagesHighRoute = StagesHighRouteImport.update({
+  id: '/stages/high',
+  path: '/stages/high',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StagesElementaryRoute = StagesElementaryRouteImport.update({
+  id: '/stages/elementary',
+  path: '/stages/elementary',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesTeachersRoute = ResourcesTeachersRouteImport.update({
+  id: '/resources/teachers',
+  path: '/resources/teachers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesStudentsRoute = ResourcesStudentsRouteImport.update({
+  id: '/resources/students',
+  path: '/resources/students',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesPoliciesRoute = ResourcesPoliciesRouteImport.update({
+  id: '/resources/policies',
+  path: '/resources/policies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesParentsRoute = ResourcesParentsRouteImport.update({
+  id: '/resources/parents',
+  path: '/resources/parents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesFormsRoute = ResourcesFormsRouteImport.update({
+  id: '/resources/forms',
+  path: '/resources/forms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsUpdatesRoute = NewsUpdatesRouteImport.update({
+  id: '/news/updates',
+  path: '/news/updates',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsCalendarRoute = NewsCalendarRouteImport.update({
+  id: '/news/calendar',
+  path: '/news/calendar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissionsTuitionRoute = AdmissionsTuitionRouteImport.update({
+  id: '/admissions/tuition',
+  path: '/admissions/tuition',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutPrincipalRoute = AboutPrincipalRouteImport.update({
+  id: '/about/principal',
+  path: '/about/principal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutMissionRoute = AboutMissionRouteImport.update({
+  id: '/about/mission',
+  path: '/about/mission',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutLeadershipRoute = AboutLeadershipRouteImport.update({
+  id: '/about/leadership',
+  path: '/about/leadership',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/gallery': typeof GalleryRoute
+  '/honors': typeof HonorsRoute
+  '/official-links': typeof OfficialLinksRoute
+  '/portal': typeof PortalRoute
+  '/privacy': typeof PrivacyRoute
+  '/about/leadership': typeof AboutLeadershipRoute
+  '/about/mission': typeof AboutMissionRoute
+  '/about/principal': typeof AboutPrincipalRoute
+  '/admissions/tuition': typeof AdmissionsTuitionRoute
+  '/news/calendar': typeof NewsCalendarRoute
+  '/news/updates': typeof NewsUpdatesRoute
+  '/resources/forms': typeof ResourcesFormsRoute
+  '/resources/parents': typeof ResourcesParentsRoute
+  '/resources/policies': typeof ResourcesPoliciesRoute
+  '/resources/students': typeof ResourcesStudentsRoute
+  '/resources/teachers': typeof ResourcesTeachersRoute
+  '/stages/elementary': typeof StagesElementaryRoute
+  '/stages/high': typeof StagesHighRoute
+  '/stages/middle': typeof StagesMiddleRoute
+  '/about/': typeof AboutIndexRoute
+  '/admissions/': typeof AdmissionsIndexRoute
+  '/news/': typeof NewsIndexRoute
+  '/stages/': typeof StagesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/gallery': typeof GalleryRoute
+  '/honors': typeof HonorsRoute
+  '/official-links': typeof OfficialLinksRoute
+  '/portal': typeof PortalRoute
+  '/privacy': typeof PrivacyRoute
+  '/about/leadership': typeof AboutLeadershipRoute
+  '/about/mission': typeof AboutMissionRoute
+  '/about/principal': typeof AboutPrincipalRoute
+  '/admissions/tuition': typeof AdmissionsTuitionRoute
+  '/news/calendar': typeof NewsCalendarRoute
+  '/news/updates': typeof NewsUpdatesRoute
+  '/resources/forms': typeof ResourcesFormsRoute
+  '/resources/parents': typeof ResourcesParentsRoute
+  '/resources/policies': typeof ResourcesPoliciesRoute
+  '/resources/students': typeof ResourcesStudentsRoute
+  '/resources/teachers': typeof ResourcesTeachersRoute
+  '/stages/elementary': typeof StagesElementaryRoute
+  '/stages/high': typeof StagesHighRoute
+  '/stages/middle': typeof StagesMiddleRoute
+  '/about': typeof AboutIndexRoute
+  '/admissions': typeof AdmissionsIndexRoute
+  '/news': typeof NewsIndexRoute
+  '/stages': typeof StagesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/gallery': typeof GalleryRoute
+  '/honors': typeof HonorsRoute
+  '/official-links': typeof OfficialLinksRoute
+  '/portal': typeof PortalRoute
+  '/privacy': typeof PrivacyRoute
+  '/about/leadership': typeof AboutLeadershipRoute
+  '/about/mission': typeof AboutMissionRoute
+  '/about/principal': typeof AboutPrincipalRoute
+  '/admissions/tuition': typeof AdmissionsTuitionRoute
+  '/news/calendar': typeof NewsCalendarRoute
+  '/news/updates': typeof NewsUpdatesRoute
+  '/resources/forms': typeof ResourcesFormsRoute
+  '/resources/parents': typeof ResourcesParentsRoute
+  '/resources/policies': typeof ResourcesPoliciesRoute
+  '/resources/students': typeof ResourcesStudentsRoute
+  '/resources/teachers': typeof ResourcesTeachersRoute
+  '/stages/elementary': typeof StagesElementaryRoute
+  '/stages/high': typeof StagesHighRoute
+  '/stages/middle': typeof StagesMiddleRoute
+  '/about/': typeof AboutIndexRoute
+  '/admissions/': typeof AdmissionsIndexRoute
+  '/news/': typeof NewsIndexRoute
+  '/stages/': typeof StagesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/faq'
+    | '/gallery'
+    | '/honors'
+    | '/official-links'
+    | '/portal'
+    | '/privacy'
+    | '/about/leadership'
+    | '/about/mission'
+    | '/about/principal'
+    | '/admissions/tuition'
+    | '/news/calendar'
+    | '/news/updates'
+    | '/resources/forms'
+    | '/resources/parents'
+    | '/resources/policies'
+    | '/resources/students'
+    | '/resources/teachers'
+    | '/stages/elementary'
+    | '/stages/high'
+    | '/stages/middle'
+    | '/about/'
+    | '/admissions/'
+    | '/news/'
+    | '/stages/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/contact'
+    | '/faq'
+    | '/gallery'
+    | '/honors'
+    | '/official-links'
+    | '/portal'
+    | '/privacy'
+    | '/about/leadership'
+    | '/about/mission'
+    | '/about/principal'
+    | '/admissions/tuition'
+    | '/news/calendar'
+    | '/news/updates'
+    | '/resources/forms'
+    | '/resources/parents'
+    | '/resources/policies'
+    | '/resources/students'
+    | '/resources/teachers'
+    | '/stages/elementary'
+    | '/stages/high'
+    | '/stages/middle'
+    | '/about'
+    | '/admissions'
+    | '/news'
+    | '/stages'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/faq'
+    | '/gallery'
+    | '/honors'
+    | '/official-links'
+    | '/portal'
+    | '/privacy'
+    | '/about/leadership'
+    | '/about/mission'
+    | '/about/principal'
+    | '/admissions/tuition'
+    | '/news/calendar'
+    | '/news/updates'
+    | '/resources/forms'
+    | '/resources/parents'
+    | '/resources/policies'
+    | '/resources/students'
+    | '/resources/teachers'
+    | '/stages/elementary'
+    | '/stages/high'
+    | '/stages/middle'
+    | '/about/'
+    | '/admissions/'
+    | '/news/'
+    | '/stages/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
+  GalleryRoute: typeof GalleryRoute
+  HonorsRoute: typeof HonorsRoute
+  OfficialLinksRoute: typeof OfficialLinksRoute
+  PortalRoute: typeof PortalRoute
+  PrivacyRoute: typeof PrivacyRoute
+  AboutLeadershipRoute: typeof AboutLeadershipRoute
+  AboutMissionRoute: typeof AboutMissionRoute
+  AboutPrincipalRoute: typeof AboutPrincipalRoute
+  AdmissionsTuitionRoute: typeof AdmissionsTuitionRoute
+  NewsCalendarRoute: typeof NewsCalendarRoute
+  NewsUpdatesRoute: typeof NewsUpdatesRoute
+  ResourcesFormsRoute: typeof ResourcesFormsRoute
+  ResourcesParentsRoute: typeof ResourcesParentsRoute
+  ResourcesPoliciesRoute: typeof ResourcesPoliciesRoute
+  ResourcesStudentsRoute: typeof ResourcesStudentsRoute
+  ResourcesTeachersRoute: typeof ResourcesTeachersRoute
+  StagesElementaryRoute: typeof StagesElementaryRoute
+  StagesHighRoute: typeof StagesHighRoute
+  StagesMiddleRoute: typeof StagesMiddleRoute
+  AboutIndexRoute: typeof AboutIndexRoute
+  AdmissionsIndexRoute: typeof AdmissionsIndexRoute
+  NewsIndexRoute: typeof NewsIndexRoute
+  StagesIndexRoute: typeof StagesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portal': {
+      id: '/portal'
+      path: '/portal'
+      fullPath: '/portal'
+      preLoaderRoute: typeof PortalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/official-links': {
+      id: '/official-links'
+      path: '/official-links'
+      fullPath: '/official-links'
+      preLoaderRoute: typeof OfficialLinksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/honors': {
+      id: '/honors'
+      path: '/honors'
+      fullPath: '/honors'
+      preLoaderRoute: typeof HonorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +426,162 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/stages/': {
+      id: '/stages/'
+      path: '/stages'
+      fullPath: '/stages/'
+      preLoaderRoute: typeof StagesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news/': {
+      id: '/news/'
+      path: '/news'
+      fullPath: '/news/'
+      preLoaderRoute: typeof NewsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions/': {
+      id: '/admissions/'
+      path: '/admissions'
+      fullPath: '/admissions/'
+      preLoaderRoute: typeof AdmissionsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/': {
+      id: '/about/'
+      path: '/about'
+      fullPath: '/about/'
+      preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stages/middle': {
+      id: '/stages/middle'
+      path: '/stages/middle'
+      fullPath: '/stages/middle'
+      preLoaderRoute: typeof StagesMiddleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stages/high': {
+      id: '/stages/high'
+      path: '/stages/high'
+      fullPath: '/stages/high'
+      preLoaderRoute: typeof StagesHighRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stages/elementary': {
+      id: '/stages/elementary'
+      path: '/stages/elementary'
+      fullPath: '/stages/elementary'
+      preLoaderRoute: typeof StagesElementaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/teachers': {
+      id: '/resources/teachers'
+      path: '/resources/teachers'
+      fullPath: '/resources/teachers'
+      preLoaderRoute: typeof ResourcesTeachersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/students': {
+      id: '/resources/students'
+      path: '/resources/students'
+      fullPath: '/resources/students'
+      preLoaderRoute: typeof ResourcesStudentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/policies': {
+      id: '/resources/policies'
+      path: '/resources/policies'
+      fullPath: '/resources/policies'
+      preLoaderRoute: typeof ResourcesPoliciesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/parents': {
+      id: '/resources/parents'
+      path: '/resources/parents'
+      fullPath: '/resources/parents'
+      preLoaderRoute: typeof ResourcesParentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/forms': {
+      id: '/resources/forms'
+      path: '/resources/forms'
+      fullPath: '/resources/forms'
+      preLoaderRoute: typeof ResourcesFormsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news/updates': {
+      id: '/news/updates'
+      path: '/news/updates'
+      fullPath: '/news/updates'
+      preLoaderRoute: typeof NewsUpdatesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news/calendar': {
+      id: '/news/calendar'
+      path: '/news/calendar'
+      fullPath: '/news/calendar'
+      preLoaderRoute: typeof NewsCalendarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions/tuition': {
+      id: '/admissions/tuition'
+      path: '/admissions/tuition'
+      fullPath: '/admissions/tuition'
+      preLoaderRoute: typeof AdmissionsTuitionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/principal': {
+      id: '/about/principal'
+      path: '/about/principal'
+      fullPath: '/about/principal'
+      preLoaderRoute: typeof AboutPrincipalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/mission': {
+      id: '/about/mission'
+      path: '/about/mission'
+      fullPath: '/about/mission'
+      preLoaderRoute: typeof AboutMissionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/leadership': {
+      id: '/about/leadership'
+      path: '/about/leadership'
+      fullPath: '/about/leadership'
+      preLoaderRoute: typeof AboutLeadershipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
+  GalleryRoute: GalleryRoute,
+  HonorsRoute: HonorsRoute,
+  OfficialLinksRoute: OfficialLinksRoute,
+  PortalRoute: PortalRoute,
+  PrivacyRoute: PrivacyRoute,
+  AboutLeadershipRoute: AboutLeadershipRoute,
+  AboutMissionRoute: AboutMissionRoute,
+  AboutPrincipalRoute: AboutPrincipalRoute,
+  AdmissionsTuitionRoute: AdmissionsTuitionRoute,
+  NewsCalendarRoute: NewsCalendarRoute,
+  NewsUpdatesRoute: NewsUpdatesRoute,
+  ResourcesFormsRoute: ResourcesFormsRoute,
+  ResourcesParentsRoute: ResourcesParentsRoute,
+  ResourcesPoliciesRoute: ResourcesPoliciesRoute,
+  ResourcesStudentsRoute: ResourcesStudentsRoute,
+  ResourcesTeachersRoute: ResourcesTeachersRoute,
+  StagesElementaryRoute: StagesElementaryRoute,
+  StagesHighRoute: StagesHighRoute,
+  StagesMiddleRoute: StagesMiddleRoute,
+  AboutIndexRoute: AboutIndexRoute,
+  AdmissionsIndexRoute: AdmissionsIndexRoute,
+  NewsIndexRoute: NewsIndexRoute,
+  StagesIndexRoute: StagesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
