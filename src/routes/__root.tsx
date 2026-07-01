@@ -13,7 +13,9 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header, MobileStickyBar } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { Toaster } from "@/components/ui/sonner";
 import { site } from "@/lib/site";
+
 
 function NotFoundComponent() {
   return (
@@ -124,7 +126,9 @@ function RootComponent() {
         </main>
         <Footer />
         <MobileStickyBar />
+        <Toaster position="top-center" />
       </div>
+
     </QueryClientProvider>
   );
 }
