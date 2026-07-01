@@ -10,33 +10,167 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as StagesIndexRouteImport } from './routes/stages.index'
+import { Route as AdmissionsIndexRouteImport } from './routes/admissions.index'
+import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as StagesMiddleRouteImport } from './routes/stages.middle'
+import { Route as StagesHighRouteImport } from './routes/stages.high'
+import { Route as StagesElementaryRouteImport } from './routes/stages.elementary'
+import { Route as AdmissionsTuitionRouteImport } from './routes/admissions.tuition'
+import { Route as AboutPrincipalRouteImport } from './routes/about.principal'
+import { Route as AboutMissionRouteImport } from './routes/about.mission'
+import { Route as AboutLeadershipRouteImport } from './routes/about.leadership'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StagesIndexRoute = StagesIndexRouteImport.update({
+  id: '/stages/',
+  path: '/stages/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissionsIndexRoute = AdmissionsIndexRouteImport.update({
+  id: '/admissions/',
+  path: '/admissions/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutIndexRoute = AboutIndexRouteImport.update({
+  id: '/about/',
+  path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StagesMiddleRoute = StagesMiddleRouteImport.update({
+  id: '/stages/middle',
+  path: '/stages/middle',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StagesHighRoute = StagesHighRouteImport.update({
+  id: '/stages/high',
+  path: '/stages/high',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StagesElementaryRoute = StagesElementaryRouteImport.update({
+  id: '/stages/elementary',
+  path: '/stages/elementary',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissionsTuitionRoute = AdmissionsTuitionRouteImport.update({
+  id: '/admissions/tuition',
+  path: '/admissions/tuition',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutPrincipalRoute = AboutPrincipalRouteImport.update({
+  id: '/about/principal',
+  path: '/about/principal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutMissionRoute = AboutMissionRouteImport.update({
+  id: '/about/mission',
+  path: '/about/mission',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutLeadershipRoute = AboutLeadershipRouteImport.update({
+  id: '/about/leadership',
+  path: '/about/leadership',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about/leadership': typeof AboutLeadershipRoute
+  '/about/mission': typeof AboutMissionRoute
+  '/about/principal': typeof AboutPrincipalRoute
+  '/admissions/tuition': typeof AdmissionsTuitionRoute
+  '/stages/elementary': typeof StagesElementaryRoute
+  '/stages/high': typeof StagesHighRoute
+  '/stages/middle': typeof StagesMiddleRoute
+  '/about/': typeof AboutIndexRoute
+  '/admissions/': typeof AdmissionsIndexRoute
+  '/stages/': typeof StagesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about/leadership': typeof AboutLeadershipRoute
+  '/about/mission': typeof AboutMissionRoute
+  '/about/principal': typeof AboutPrincipalRoute
+  '/admissions/tuition': typeof AdmissionsTuitionRoute
+  '/stages/elementary': typeof StagesElementaryRoute
+  '/stages/high': typeof StagesHighRoute
+  '/stages/middle': typeof StagesMiddleRoute
+  '/about': typeof AboutIndexRoute
+  '/admissions': typeof AdmissionsIndexRoute
+  '/stages': typeof StagesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about/leadership': typeof AboutLeadershipRoute
+  '/about/mission': typeof AboutMissionRoute
+  '/about/principal': typeof AboutPrincipalRoute
+  '/admissions/tuition': typeof AdmissionsTuitionRoute
+  '/stages/elementary': typeof StagesElementaryRoute
+  '/stages/high': typeof StagesHighRoute
+  '/stages/middle': typeof StagesMiddleRoute
+  '/about/': typeof AboutIndexRoute
+  '/admissions/': typeof AdmissionsIndexRoute
+  '/stages/': typeof StagesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about/leadership'
+    | '/about/mission'
+    | '/about/principal'
+    | '/admissions/tuition'
+    | '/stages/elementary'
+    | '/stages/high'
+    | '/stages/middle'
+    | '/about/'
+    | '/admissions/'
+    | '/stages/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about/leadership'
+    | '/about/mission'
+    | '/about/principal'
+    | '/admissions/tuition'
+    | '/stages/elementary'
+    | '/stages/high'
+    | '/stages/middle'
+    | '/about'
+    | '/admissions'
+    | '/stages'
+  id:
+    | '__root__'
+    | '/'
+    | '/about/leadership'
+    | '/about/mission'
+    | '/about/principal'
+    | '/admissions/tuition'
+    | '/stages/elementary'
+    | '/stages/high'
+    | '/stages/middle'
+    | '/about/'
+    | '/admissions/'
+    | '/stages/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutLeadershipRoute: typeof AboutLeadershipRoute
+  AboutMissionRoute: typeof AboutMissionRoute
+  AboutPrincipalRoute: typeof AboutPrincipalRoute
+  AdmissionsTuitionRoute: typeof AdmissionsTuitionRoute
+  StagesElementaryRoute: typeof StagesElementaryRoute
+  StagesHighRoute: typeof StagesHighRoute
+  StagesMiddleRoute: typeof StagesMiddleRoute
+  AboutIndexRoute: typeof AboutIndexRoute
+  AdmissionsIndexRoute: typeof AdmissionsIndexRoute
+  StagesIndexRoute: typeof StagesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +182,92 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/stages/': {
+      id: '/stages/'
+      path: '/stages'
+      fullPath: '/stages/'
+      preLoaderRoute: typeof StagesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions/': {
+      id: '/admissions/'
+      path: '/admissions'
+      fullPath: '/admissions/'
+      preLoaderRoute: typeof AdmissionsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/': {
+      id: '/about/'
+      path: '/about'
+      fullPath: '/about/'
+      preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stages/middle': {
+      id: '/stages/middle'
+      path: '/stages/middle'
+      fullPath: '/stages/middle'
+      preLoaderRoute: typeof StagesMiddleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stages/high': {
+      id: '/stages/high'
+      path: '/stages/high'
+      fullPath: '/stages/high'
+      preLoaderRoute: typeof StagesHighRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stages/elementary': {
+      id: '/stages/elementary'
+      path: '/stages/elementary'
+      fullPath: '/stages/elementary'
+      preLoaderRoute: typeof StagesElementaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions/tuition': {
+      id: '/admissions/tuition'
+      path: '/admissions/tuition'
+      fullPath: '/admissions/tuition'
+      preLoaderRoute: typeof AdmissionsTuitionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/principal': {
+      id: '/about/principal'
+      path: '/about/principal'
+      fullPath: '/about/principal'
+      preLoaderRoute: typeof AboutPrincipalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/mission': {
+      id: '/about/mission'
+      path: '/about/mission'
+      fullPath: '/about/mission'
+      preLoaderRoute: typeof AboutMissionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/leadership': {
+      id: '/about/leadership'
+      path: '/about/leadership'
+      fullPath: '/about/leadership'
+      preLoaderRoute: typeof AboutLeadershipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutLeadershipRoute: AboutLeadershipRoute,
+  AboutMissionRoute: AboutMissionRoute,
+  AboutPrincipalRoute: AboutPrincipalRoute,
+  AdmissionsTuitionRoute: AdmissionsTuitionRoute,
+  StagesElementaryRoute: StagesElementaryRoute,
+  StagesHighRoute: StagesHighRoute,
+  StagesMiddleRoute: StagesMiddleRoute,
+  AboutIndexRoute: AboutIndexRoute,
+  AdmissionsIndexRoute: AdmissionsIndexRoute,
+  StagesIndexRoute: StagesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
