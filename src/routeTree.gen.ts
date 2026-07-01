@@ -9,18 +9,33 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as HonorsRouteImport } from './routes/honors'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as StagesIndexRouteImport } from './routes/stages.index'
+import { Route as NewsIndexRouteImport } from './routes/news.index'
 import { Route as AdmissionsIndexRouteImport } from './routes/admissions.index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as StagesMiddleRouteImport } from './routes/stages.middle'
 import { Route as StagesHighRouteImport } from './routes/stages.high'
 import { Route as StagesElementaryRouteImport } from './routes/stages.elementary'
+import { Route as NewsUpdatesRouteImport } from './routes/news.updates'
+import { Route as NewsCalendarRouteImport } from './routes/news.calendar'
 import { Route as AdmissionsTuitionRouteImport } from './routes/admissions.tuition'
 import { Route as AboutPrincipalRouteImport } from './routes/about.principal'
 import { Route as AboutMissionRouteImport } from './routes/about.mission'
 import { Route as AboutLeadershipRouteImport } from './routes/about.leadership'
 
+const HonorsRoute = HonorsRouteImport.update({
+  id: '/honors',
+  path: '/honors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -29,6 +44,11 @@ const IndexRoute = IndexRouteImport.update({
 const StagesIndexRoute = StagesIndexRouteImport.update({
   id: '/stages/',
   path: '/stages/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsIndexRoute = NewsIndexRouteImport.update({
+  id: '/news/',
+  path: '/news/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdmissionsIndexRoute = AdmissionsIndexRouteImport.update({
@@ -56,6 +76,16 @@ const StagesElementaryRoute = StagesElementaryRouteImport.update({
   path: '/stages/elementary',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NewsUpdatesRoute = NewsUpdatesRouteImport.update({
+  id: '/news/updates',
+  path: '/news/updates',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsCalendarRoute = NewsCalendarRouteImport.update({
+  id: '/news/calendar',
+  path: '/news/calendar',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdmissionsTuitionRoute = AdmissionsTuitionRouteImport.update({
   id: '/admissions/tuition',
   path: '/admissions/tuition',
@@ -79,102 +109,151 @@ const AboutLeadershipRoute = AboutLeadershipRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/gallery': typeof GalleryRoute
+  '/honors': typeof HonorsRoute
   '/about/leadership': typeof AboutLeadershipRoute
   '/about/mission': typeof AboutMissionRoute
   '/about/principal': typeof AboutPrincipalRoute
   '/admissions/tuition': typeof AdmissionsTuitionRoute
+  '/news/calendar': typeof NewsCalendarRoute
+  '/news/updates': typeof NewsUpdatesRoute
   '/stages/elementary': typeof StagesElementaryRoute
   '/stages/high': typeof StagesHighRoute
   '/stages/middle': typeof StagesMiddleRoute
   '/about/': typeof AboutIndexRoute
   '/admissions/': typeof AdmissionsIndexRoute
+  '/news/': typeof NewsIndexRoute
   '/stages/': typeof StagesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/gallery': typeof GalleryRoute
+  '/honors': typeof HonorsRoute
   '/about/leadership': typeof AboutLeadershipRoute
   '/about/mission': typeof AboutMissionRoute
   '/about/principal': typeof AboutPrincipalRoute
   '/admissions/tuition': typeof AdmissionsTuitionRoute
+  '/news/calendar': typeof NewsCalendarRoute
+  '/news/updates': typeof NewsUpdatesRoute
   '/stages/elementary': typeof StagesElementaryRoute
   '/stages/high': typeof StagesHighRoute
   '/stages/middle': typeof StagesMiddleRoute
   '/about': typeof AboutIndexRoute
   '/admissions': typeof AdmissionsIndexRoute
+  '/news': typeof NewsIndexRoute
   '/stages': typeof StagesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/gallery': typeof GalleryRoute
+  '/honors': typeof HonorsRoute
   '/about/leadership': typeof AboutLeadershipRoute
   '/about/mission': typeof AboutMissionRoute
   '/about/principal': typeof AboutPrincipalRoute
   '/admissions/tuition': typeof AdmissionsTuitionRoute
+  '/news/calendar': typeof NewsCalendarRoute
+  '/news/updates': typeof NewsUpdatesRoute
   '/stages/elementary': typeof StagesElementaryRoute
   '/stages/high': typeof StagesHighRoute
   '/stages/middle': typeof StagesMiddleRoute
   '/about/': typeof AboutIndexRoute
   '/admissions/': typeof AdmissionsIndexRoute
+  '/news/': typeof NewsIndexRoute
   '/stages/': typeof StagesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/gallery'
+    | '/honors'
     | '/about/leadership'
     | '/about/mission'
     | '/about/principal'
     | '/admissions/tuition'
+    | '/news/calendar'
+    | '/news/updates'
     | '/stages/elementary'
     | '/stages/high'
     | '/stages/middle'
     | '/about/'
     | '/admissions/'
+    | '/news/'
     | '/stages/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/gallery'
+    | '/honors'
     | '/about/leadership'
     | '/about/mission'
     | '/about/principal'
     | '/admissions/tuition'
+    | '/news/calendar'
+    | '/news/updates'
     | '/stages/elementary'
     | '/stages/high'
     | '/stages/middle'
     | '/about'
     | '/admissions'
+    | '/news'
     | '/stages'
   id:
     | '__root__'
     | '/'
+    | '/gallery'
+    | '/honors'
     | '/about/leadership'
     | '/about/mission'
     | '/about/principal'
     | '/admissions/tuition'
+    | '/news/calendar'
+    | '/news/updates'
     | '/stages/elementary'
     | '/stages/high'
     | '/stages/middle'
     | '/about/'
     | '/admissions/'
+    | '/news/'
     | '/stages/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GalleryRoute: typeof GalleryRoute
+  HonorsRoute: typeof HonorsRoute
   AboutLeadershipRoute: typeof AboutLeadershipRoute
   AboutMissionRoute: typeof AboutMissionRoute
   AboutPrincipalRoute: typeof AboutPrincipalRoute
   AdmissionsTuitionRoute: typeof AdmissionsTuitionRoute
+  NewsCalendarRoute: typeof NewsCalendarRoute
+  NewsUpdatesRoute: typeof NewsUpdatesRoute
   StagesElementaryRoute: typeof StagesElementaryRoute
   StagesHighRoute: typeof StagesHighRoute
   StagesMiddleRoute: typeof StagesMiddleRoute
   AboutIndexRoute: typeof AboutIndexRoute
   AdmissionsIndexRoute: typeof AdmissionsIndexRoute
+  NewsIndexRoute: typeof NewsIndexRoute
   StagesIndexRoute: typeof StagesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/honors': {
+      id: '/honors'
+      path: '/honors'
+      fullPath: '/honors'
+      preLoaderRoute: typeof HonorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -187,6 +266,13 @@ declare module '@tanstack/react-router' {
       path: '/stages'
       fullPath: '/stages/'
       preLoaderRoute: typeof StagesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news/': {
+      id: '/news/'
+      path: '/news'
+      fullPath: '/news/'
+      preLoaderRoute: typeof NewsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admissions/': {
@@ -224,6 +310,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StagesElementaryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/news/updates': {
+      id: '/news/updates'
+      path: '/news/updates'
+      fullPath: '/news/updates'
+      preLoaderRoute: typeof NewsUpdatesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news/calendar': {
+      id: '/news/calendar'
+      path: '/news/calendar'
+      fullPath: '/news/calendar'
+      preLoaderRoute: typeof NewsCalendarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admissions/tuition': {
       id: '/admissions/tuition'
       path: '/admissions/tuition'
@@ -257,15 +357,20 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GalleryRoute: GalleryRoute,
+  HonorsRoute: HonorsRoute,
   AboutLeadershipRoute: AboutLeadershipRoute,
   AboutMissionRoute: AboutMissionRoute,
   AboutPrincipalRoute: AboutPrincipalRoute,
   AdmissionsTuitionRoute: AdmissionsTuitionRoute,
+  NewsCalendarRoute: NewsCalendarRoute,
+  NewsUpdatesRoute: NewsUpdatesRoute,
   StagesElementaryRoute: StagesElementaryRoute,
   StagesHighRoute: StagesHighRoute,
   StagesMiddleRoute: StagesMiddleRoute,
   AboutIndexRoute: AboutIndexRoute,
   AdmissionsIndexRoute: AdmissionsIndexRoute,
+  NewsIndexRoute: NewsIndexRoute,
   StagesIndexRoute: StagesIndexRoute,
 }
 export const routeTree = rootRouteImport
