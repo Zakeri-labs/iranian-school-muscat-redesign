@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { PageHeader, Section } from "@/components/site/PageHeader";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -30,6 +30,3 @@ export function ResourceList({
     </>
   );
 }
-
-// Dummy route so this file is inside src/routes/... wait — it's in components; ok
-export const Route = createFileRoute as unknown as never;
