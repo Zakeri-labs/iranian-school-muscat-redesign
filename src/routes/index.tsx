@@ -1,8 +1,26 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  Calendar, FileDown, CreditCard, LogIn, Phone, Bell, ClipboardList, MapPin,
-  GraduationCap, School, BookOpen, Users, UserCog, Landmark, ArrowLeft, CheckCircle2,
-  FileText, Send, ClipboardCheck, ChevronLeft, Image as ImageIcon
+  Calendar,
+  FileDown,
+  CreditCard,
+  LogIn,
+  Phone,
+  Bell,
+  ClipboardList,
+  MapPin,
+  GraduationCap,
+  School,
+  BookOpen,
+  Users,
+  UserCog,
+  Landmark,
+  ArrowLeft,
+  CheckCircle2,
+  FileText,
+  Send,
+  ClipboardCheck,
+  ChevronLeft,
+  Image as ImageIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -17,14 +35,21 @@ import principalImg from "@/assets/principal.jpg";
 import libImg from "@/assets/life-library.jpg";
 import sportsImg from "@/assets/life-sports.jpg";
 import tripImg from "@/assets/life-trip.jpg";
+import parentsAccessImg from "@/assets/parents-access.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: `${site.name} — ${site.descriptor}` },
-      { name: "description", content: `پایگاه رسمی ${site.name}؛ ثبت‌نام، شهریه، اطلاعیه‌ها، تقویم آموزشی و منابع والدین و دانش‌آموزان در مسقط، عمان.` },
+      {
+        name: "description",
+        content: `پایگاه رسمی ${site.name}؛ ثبت‌نام، شهریه، اطلاعیه‌ها، تقویم آموزشی و منابع والدین و دانش‌آموزان در مسقط، عمان.`,
+      },
       { property: "og:title", content: `${site.name}` },
-      { property: "og:description", content: "مدرسه رسمی ایرانی در مسقط، عمان — ابتدایی، متوسطه اول و متوسطه دوم." },
+      {
+        property: "og:description",
+        content: "مدرسه رسمی ایرانی در مسقط، عمان — ابتدایی، متوسطه اول و متوسطه دوم.",
+      },
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
     ],
@@ -38,7 +63,13 @@ function Home() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="نمای بیرونی مجتمع آموزشی ایرانیان مسقط" width={1920} height={1080} className="h-full w-full object-cover" />
+          <img
+            src={heroImg}
+            alt="نمای بیرونی مجتمع آموزشی ایرانیان مسقط"
+            width={1920}
+            height={1080}
+            className="h-full w-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-l from-primary/85 via-primary/70 to-primary/40" />
         </div>
         <div className="relative container mx-auto px-4 py-16 lg:py-28">
@@ -46,20 +77,28 @@ function Home() {
             <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 backdrop-blur px-3 py-1 text-xs font-medium border border-primary-foreground/20">
               <MapPin className="size-3.5" /> {site.addressShort}
             </div>
-            <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight">
-              {site.name}
-            </h1>
+            <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight">{site.name}</h1>
             <p className="mt-3 text-lg md:text-xl text-primary-foreground/90">{site.tagline}</p>
             <p className="mt-3 text-primary-foreground/80 leading-8 max-w-xl">
-              مدرسه رسمی ایرانی برای دانش‌آموزان مقاطع ابتدایی، متوسطه اول و متوسطه دوم در مسقط، عمان.
+              مدرسه رسمی ایرانی برای دانش‌آموزان مقاطع ابتدایی، متوسطه اول و متوسطه دوم در مسقط،
+              عمان.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <Button asChild size="lg" className="bg-brand hover:bg-brand/90 text-brand-foreground">
+              <Button
+                asChild
+                size="lg"
+                className="bg-brand hover:bg-brand/90 text-brand-foreground"
+              >
                 <Link to="/admissions">
                   ثبت‌نام سال تحصیلی <ArrowLeft className="size-4 mr-1" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-transparent text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/10">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="bg-transparent text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/10"
+              >
                 <Link to="/admissions/tuition">مشاهده شهریه و مقاطع</Link>
               </Button>
             </div>
@@ -75,7 +114,11 @@ function Home() {
                 { t: "ورود به پنل", to: "/portal", i: LogIn },
                 { t: "تماس با مدرسه", to: "/contact", i: Phone },
               ].map(({ t, to, i: Icon }) => (
-                <Link key={to} to={to} className="flex flex-col items-center justify-center gap-2 rounded-xl px-3 py-4 text-sm font-medium text-foreground hover:bg-brand-soft hover:text-brand transition-colors min-h-16 text-center">
+                <Link
+                  key={to}
+                  to={to}
+                  className="flex flex-col items-center justify-center gap-2 rounded-xl px-3 py-4 text-sm font-medium text-foreground hover:bg-brand-soft hover:text-brand transition-colors min-h-16 text-center"
+                >
                   <Icon className="size-5 text-brand" />
                   {t}
                 </Link>
@@ -94,18 +137,29 @@ function Home() {
             </div>
             <div>
               <div className="flex items-center gap-2 text-xs text-notice font-medium">
-                <span className="inline-flex items-center rounded-full bg-notice px-2 py-0.5 text-notice-foreground">اطلاعیه مهم</span>
+                <span className="inline-flex items-center rounded-full bg-notice px-2 py-0.5 text-notice-foreground">
+                  اطلاعیه مهم
+                </span>
                 <span className="text-muted-foreground">۲۵ خرداد ۱۴۰۴</span>
               </div>
-              <div className="mt-1 text-[15px] font-semibold text-primary">آغاز ثبت‌نام سال تحصیلی جدید</div>
+              <div className="mt-1 text-[15px] font-semibold text-primary">
+                آغاز ثبت‌نام سال تحصیلی جدید
+              </div>
               <p className="text-sm text-muted-foreground mt-0.5">
-                ثبت‌نام سال تحصیلی جدید آغاز شد. برای مشاهده جزئیات و زمان‌بندی، اطلاعیه را دنبال کنید.
+                ثبت‌نام سال تحصیلی جدید آغاز شد. برای مشاهده جزئیات و زمان‌بندی، اطلاعیه را دنبال
+                کنید.
               </p>
             </div>
           </div>
           <div className="md:mr-auto">
-            <Button asChild variant="outline" className="border-notice/40 text-notice hover:bg-notice hover:text-notice-foreground">
-              <Link to="/news">مشاهده اطلاعیه <ChevronLeft className="size-4 mr-1" /></Link>
+            <Button
+              asChild
+              variant="outline"
+              className="border-notice/40 text-notice hover:bg-notice hover:text-notice-foreground"
+            >
+              <Link to="/news">
+                مشاهده اطلاعیه <ChevronLeft className="size-4 mr-1" />
+              </Link>
             </Button>
           </div>
         </div>
@@ -113,40 +167,87 @@ function Home() {
 
       {/* Quick access for parents */}
       <Section>
-        <SectionTitle eyebrow="والدین" title="دسترسی سریع والدین" description="پرکاربردترین بخش‌های مدرسه در یک نگاه." />
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {[
-            { t: "ثبت‌نام", to: "/admissions", i: ClipboardList },
-            { t: "شهریه و پرداخت", to: "/admissions/tuition", i: CreditCard },
-            { t: "مدارک لازم", to: "/admissions#documents", i: FileText },
-            { t: "دانلود فرم‌ها", to: "/resources/forms", i: FileDown },
-            { t: "تقویم آموزشی", to: "/news/calendar", i: Calendar },
-            { t: "اطلاعیه‌ها", to: "/news", i: Bell },
-            { t: "ورود به پنل", to: "/portal", i: LogIn },
-            { t: "تماس با مدرسه", to: "/contact", i: Phone },
-          ].map(({ t, to, i: Icon }) => (
-            <Link key={to} to={to} className="group rounded-xl border border-border bg-card p-5 hover:border-brand/40 hover:shadow-sm transition-all">
-              <Icon className="size-6 text-brand mb-3" />
-              <div className="text-[14px] font-semibold text-primary group-hover:text-brand">{t}</div>
-            </Link>
-          ))}
+        <div className="grid items-center gap-8 lg:grid-cols-[minmax(280px,360px)_minmax(0,1fr)] xl:gap-10">
+          <div className="order-2">
+            <SectionTitle
+              eyebrow="والدین"
+              title="دسترسی سریع والدین"
+              description="پرکاربردترین بخش‌های مدرسه در یک نگاه."
+            />
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+              {[
+                { t: "ثبت‌نام", to: "/admissions", i: ClipboardList },
+                { t: "شهریه و پرداخت", to: "/admissions/tuition", i: CreditCard },
+                { t: "مدارک لازم", to: "/admissions#documents", i: FileText },
+                { t: "دانلود فرم‌ها", to: "/resources/forms", i: FileDown },
+                { t: "تقویم آموزشی", to: "/news/calendar", i: Calendar },
+                { t: "اطلاعیه‌ها", to: "/news", i: Bell },
+                { t: "ورود به پنل", to: "/portal", i: LogIn },
+                { t: "تماس با مدرسه", to: "/contact", i: Phone },
+              ].map(({ t, to, i: Icon }) => (
+                <Link
+                  key={to}
+                  to={to}
+                  className="group relative min-h-32 rounded-2xl border border-border bg-card p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-md sm:min-h-36 lg:min-h-40 xl:min-h-44"
+                >
+                  <div className="flex h-full flex-col items-center justify-center text-center">
+                    <Icon className="size-10 text-primary transition-colors group-hover:text-brand sm:size-12" />
+                    <div className="mt-4 text-[14px] font-bold text-primary transition-colors group-hover:text-brand sm:text-base">
+                      {t}
+                    </div>
+                  </div>
+                  <span className="absolute bottom-4 right-4 inline-flex size-8 items-center justify-center rounded-full border border-border bg-background text-primary transition-colors group-hover:border-brand/40 group-hover:bg-brand group-hover:text-brand-foreground">
+                    <ChevronLeft className="size-4" />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div className="order-1">
+            <div className="mx-auto w-full max-w-[360px] overflow-hidden rounded-[2rem] border border-border bg-muted shadow-sm">
+              <img
+                src={parentsAccessImg}
+                alt="گفت‌وگوی والدین با مشاور مدرسه"
+                loading="lazy"
+                width={702}
+                height={784}
+                className="aspect-[7/8] h-full w-full object-cover"
+              />
+            </div>
+          </div>
         </div>
       </Section>
 
       {/* Admissions journey */}
       <Section className="bg-surface !py-14 -mx-0">
         <div className="container mx-auto">
-          <SectionTitle eyebrow="ثبت‌نام" title="مسیر ثبت‌نام در مجتمع" description="در چهار گام ساده، ثبت‌نام فرزندتان را کامل کنید." />
+          <SectionTitle
+            eyebrow="ثبت‌نام"
+            title="مسیر ثبت‌نام در مجتمع"
+            description="در چهار گام ساده، ثبت‌نام فرزندتان را کامل کنید."
+          />
           <div className="grid md:grid-cols-4 gap-4">
             {[
-              { n: 1, t: "بررسی شرایط", d: "شرایط پذیرش هر مقطع را مطالعه کنید.", i: ClipboardCheck },
+              {
+                n: 1,
+                t: "بررسی شرایط",
+                d: "شرایط پذیرش هر مقطع را مطالعه کنید.",
+                i: ClipboardCheck,
+              },
               { n: 2, t: "آماده‌سازی مدارک", d: "چک‌لیست مدارک لازم را تکمیل کنید.", i: FileText },
               { n: 3, t: "ارسال درخواست", d: "فرم ثبت‌نام را ثبت و مدارک را ارسال کنید.", i: Send },
-              { n: 4, t: "تأیید ثبت‌نام", d: "پس از بررسی، تأییدیه به شما اعلام می‌شود.", i: CheckCircle2 },
+              {
+                n: 4,
+                t: "تأیید ثبت‌نام",
+                d: "پس از بررسی، تأییدیه به شما اعلام می‌شود.",
+                i: CheckCircle2,
+              },
             ].map(({ n, t, d, i: Icon }) => (
               <Card key={n} className="p-5 relative">
                 <div className="flex items-start justify-between">
-                  <div className="p-2.5 rounded-lg bg-brand-soft text-brand"><Icon className="size-5" /></div>
+                  <div className="p-2.5 rounded-lg bg-brand-soft text-brand">
+                    <Icon className="size-5" />
+                  </div>
                   <span className="text-2xl font-bold text-primary/20">۰{toFa(n)}</span>
                 </div>
                 <div className="mt-4 font-semibold text-primary">{t}</div>
@@ -156,7 +257,9 @@ function Home() {
           </div>
           <div className="mt-6">
             <Button asChild variant="outline">
-              <Link to="/admissions">مشاهده راهنمای کامل ثبت‌نام <ChevronLeft className="size-4 mr-1" /></Link>
+              <Link to="/admissions">
+                مشاهده راهنمای کامل ثبت‌نام <ChevronLeft className="size-4 mr-1" />
+              </Link>
             </Button>
           </div>
         </div>
@@ -164,16 +267,45 @@ function Home() {
 
       {/* Academic stages */}
       <Section>
-        <SectionTitle eyebrow="مقاطع" title="مقاطع آموزشی" description="سه مقطع تحصیلی با برنامه درسی رسمی مصوب." />
+        <SectionTitle
+          eyebrow="مقاطع"
+          title="مقاطع آموزشی"
+          description="سه مقطع تحصیلی با برنامه درسی رسمی مصوب."
+        />
         <div className="grid md:grid-cols-3 gap-4">
           {[
-            { t: "ابتدایی", d: "پایه اول تا ششم", to: "/stages/elementary", img: elemImg, i: BookOpen },
-            { t: "متوسطه اول", d: "پایه هفتم تا نهم", to: "/stages/middle", img: middleImg, i: School },
-            { t: "متوسطه دوم", d: "پایه دهم تا دوازدهم", to: "/stages/high", img: highImg, i: GraduationCap },
+            {
+              t: "ابتدایی",
+              d: "پایه اول تا ششم",
+              to: "/stages/elementary",
+              img: elemImg,
+              i: BookOpen,
+            },
+            {
+              t: "متوسطه اول",
+              d: "پایه هفتم تا نهم",
+              to: "/stages/middle",
+              img: middleImg,
+              i: School,
+            },
+            {
+              t: "متوسطه دوم",
+              d: "پایه دهم تا دوازدهم",
+              to: "/stages/high",
+              img: highImg,
+              i: GraduationCap,
+            },
           ].map(({ t, d, to, img, i: Icon }) => (
             <Card key={to} className="overflow-hidden group">
               <div className="aspect-[16/10] overflow-hidden bg-muted">
-                <img src={img} alt={t} loading="lazy" width={1024} height={768} className="h-full w-full object-cover group-hover:scale-[1.02] transition-transform" />
+                <img
+                  src={img}
+                  alt={t}
+                  loading="lazy"
+                  width={1024}
+                  height={768}
+                  className="h-full w-full object-cover group-hover:scale-[1.02] transition-transform"
+                />
               </div>
               <div className="p-5">
                 <div className="flex items-center gap-2 text-brand">
@@ -182,7 +314,10 @@ function Home() {
                 </div>
                 <p className="text-sm text-muted-foreground mt-1">{d}</p>
                 <div className="mt-4">
-                  <Link to={to} className="inline-flex items-center gap-1 text-sm font-medium text-brand hover:underline">
+                  <Link
+                    to={to}
+                    className="inline-flex items-center gap-1 text-sm font-medium text-brand hover:underline"
+                  >
                     مشاهده جزئیات مقطع <ChevronLeft className="size-4" />
                   </Link>
                 </div>
@@ -195,24 +330,73 @@ function Home() {
       {/* User pathways */}
       <Section className="bg-surface !py-14">
         <div className="container mx-auto">
-          <SectionTitle eyebrow="مسیرها" title="دسترسی سریع بر اساس نقش شما" description="مسیر مناسب خود را انتخاب کنید تا سریع‌تر به آنچه نیاز دارید برسید." />
+          <SectionTitle
+            eyebrow="مسیرها"
+            title="دسترسی سریع بر اساس نقش شما"
+            description="مسیر مناسب خود را انتخاب کنید تا سریع‌تر به آنچه نیاز دارید برسید."
+          />
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
-              { t: "والدین", i: Users, links: [{t:"منابع والدین",to:"/resources/parents"},{t:"شهریه و پرداخت",to:"/admissions/tuition"},{t:"تقویم آموزشی",to:"/news/calendar"}] },
-              { t: "دانش‌آموزان", i: GraduationCap, links: [{t:"منابع دانش‌آموزان",to:"/resources/students"},{t:"تقویم امتحانات",to:"/news/calendar"},{t:"اطلاعیه‌ها",to:"/news"}] },
-              { t: "معلمان", i: School, links: [{t:"منابع معلمان",to:"/resources/teachers"},{t:"آیین‌نامه‌ها",to:"/resources/policies"},{t:"پنل کاربری",to:"/portal"}] },
-              { t: "کادر اداری", i: UserCog, links: [{t:"دانلود فرم‌ها",to:"/resources/forms"},{t:"مدیریت مجتمع",to:"/about/leadership"},{t:"پنل کاربری",to:"/portal"}] },
-              { t: "مراجع رسمی", i: Landmark, links: [{t:"لینک‌های رسمی",to:"/official-links"},{t:"درباره مجتمع",to:"/about"},{t:"تماس با ما",to:"/contact"}] },
+              {
+                t: "والدین",
+                i: Users,
+                links: [
+                  { t: "منابع والدین", to: "/resources/parents" },
+                  { t: "شهریه و پرداخت", to: "/admissions/tuition" },
+                  { t: "تقویم آموزشی", to: "/news/calendar" },
+                ],
+              },
+              {
+                t: "دانش‌آموزان",
+                i: GraduationCap,
+                links: [
+                  { t: "منابع دانش‌آموزان", to: "/resources/students" },
+                  { t: "تقویم امتحانات", to: "/news/calendar" },
+                  { t: "اطلاعیه‌ها", to: "/news" },
+                ],
+              },
+              {
+                t: "معلمان",
+                i: School,
+                links: [
+                  { t: "منابع معلمان", to: "/resources/teachers" },
+                  { t: "آیین‌نامه‌ها", to: "/resources/policies" },
+                  { t: "پنل کاربری", to: "/portal" },
+                ],
+              },
+              {
+                t: "کادر اداری",
+                i: UserCog,
+                links: [
+                  { t: "دانلود فرم‌ها", to: "/resources/forms" },
+                  { t: "مدیریت مجتمع", to: "/about/leadership" },
+                  { t: "پنل کاربری", to: "/portal" },
+                ],
+              },
+              {
+                t: "مراجع رسمی",
+                i: Landmark,
+                links: [
+                  { t: "لینک‌های رسمی", to: "/official-links" },
+                  { t: "درباره مجتمع", to: "/about" },
+                  { t: "تماس با ما", to: "/contact" },
+                ],
+              },
             ].map(({ t, i: Icon, links }) => (
               <Card key={t} className="p-5">
                 <div className="flex items-center gap-2 text-brand">
-                  <div className="p-2 rounded-lg bg-brand-soft"><Icon className="size-4" /></div>
+                  <div className="p-2 rounded-lg bg-brand-soft">
+                    <Icon className="size-4" />
+                  </div>
                   <h3 className="font-semibold text-primary">{t}</h3>
                 </div>
                 <ul className="mt-4 space-y-2">
                   {links.map((l) => (
                     <li key={l.to}>
-                      <Link to={l.to} className="text-sm text-muted-foreground hover:text-brand flex items-center gap-1">
+                      <Link
+                        to={l.to}
+                        className="text-sm text-muted-foreground hover:text-brand flex items-center gap-1"
+                      >
                         <ChevronLeft className="size-3.5" /> {l.t}
                       </Link>
                     </li>
@@ -231,18 +415,30 @@ function Home() {
             <div className="text-xs font-medium text-brand mb-2">درباره مجتمع</div>
             <h3 className="text-xl font-bold text-primary">هویت رسمی، آموزش ایرانی</h3>
             <p className="mt-3 text-sm text-muted-foreground leading-7">
-              {site.name} با بهره‌گیری از برنامه‌های آموزشی رسمی جمهوری اسلامی ایران و کادری مجرب، در مسیر تعالی علمی و اخلاقی دانش‌آموزان گام برمی‌دارد.
+              {site.name} با بهره‌گیری از برنامه‌های آموزشی رسمی جمهوری اسلامی ایران و کادری مجرب،
+              در مسیر تعالی علمی و اخلاقی دانش‌آموزان گام برمی‌دارد.
             </p>
             <div className="mt-5 flex gap-2">
-              <Button asChild variant="outline" size="sm"><Link to="/about">بیشتر بخوانید</Link></Button>
-              <Button asChild variant="ghost" size="sm"><Link to="/about/mission">مأموریت و ارزش‌ها</Link></Button>
+              <Button asChild variant="outline" size="sm">
+                <Link to="/about">بیشتر بخوانید</Link>
+              </Button>
+              <Button asChild variant="ghost" size="sm">
+                <Link to="/about/mission">مأموریت و ارزش‌ها</Link>
+              </Button>
             </div>
           </Card>
 
           <Card className="p-6 lg:col-span-1">
             <div className="text-xs font-medium text-brand mb-2">پیام مدیر</div>
             <div className="flex items-start gap-4">
-              <img src={principalImg} alt="مدیر مجتمع" loading="lazy" width={80} height={80} className="size-16 rounded-full object-cover shrink-0" />
+              <img
+                src={principalImg}
+                alt="مدیر مجتمع"
+                loading="lazy"
+                width={80}
+                height={80}
+                className="size-16 rounded-full object-cover shrink-0"
+              />
               <div>
                 <p className="text-sm text-foreground leading-7">
                   «هدف ما تربیت نسلی دانا، مسئول و متعهد به ایران و آموزه‌های اسلامی است.»
@@ -254,7 +450,9 @@ function Home() {
               </div>
             </div>
             <div className="mt-5">
-              <Button asChild variant="outline" size="sm"><Link to="/about/principal">پیام کامل</Link></Button>
+              <Button asChild variant="outline" size="sm">
+                <Link to="/about/principal">پیام کامل</Link>
+              </Button>
             </div>
           </Card>
 
@@ -267,13 +465,17 @@ function Home() {
                 { t: "کادر آموزشی و اداری مجرب", i: Users },
               ].map(({ t, i: Icon }, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-sm">
-                  <div className="p-1.5 rounded-md bg-brand-soft text-brand mt-0.5"><Icon className="size-4" /></div>
+                  <div className="p-1.5 rounded-md bg-brand-soft text-brand mt-0.5">
+                    <Icon className="size-4" />
+                  </div>
                   <span className="text-foreground leading-6">{t}</span>
                 </li>
               ))}
             </ul>
             <div className="mt-5">
-              <Button asChild variant="outline" size="sm"><Link to="/official-links">لینک‌های رسمی</Link></Button>
+              <Button asChild variant="outline" size="sm">
+                <Link to="/official-links">لینک‌های رسمی</Link>
+              </Button>
             </div>
           </Card>
         </div>
@@ -286,13 +488,34 @@ function Home() {
             <SectionTitle eyebrow="اطلاعیه‌ها" title="آخرین اخبار و اطلاعیه‌ها" />
             <div className="space-y-3">
               {[
-                { tag: "خبر", d: "۲۰ خرداد ۱۴۰۴", t: "بازدید علمی دانش‌آموزان از موزه علوم", to: "/news/updates" },
-                { tag: "اطلاعیه", d: "۱۵ خرداد ۱۴۰۴", t: "زمان‌بندی امتحانات پایان سال تحصیلی اعلام شد", to: "/news" },
-                { tag: "رویداد", d: "۱۰ خرداد ۱۴۰۴", t: "برگزاری جشن پایان دوره ابتدایی", to: "/news/updates" },
+                {
+                  tag: "خبر",
+                  d: "۲۰ خرداد ۱۴۰۴",
+                  t: "بازدید علمی دانش‌آموزان از موزه علوم",
+                  to: "/news/updates",
+                },
+                {
+                  tag: "اطلاعیه",
+                  d: "۱۵ خرداد ۱۴۰۴",
+                  t: "زمان‌بندی امتحانات پایان سال تحصیلی اعلام شد",
+                  to: "/news",
+                },
+                {
+                  tag: "رویداد",
+                  d: "۱۰ خرداد ۱۴۰۴",
+                  t: "برگزاری جشن پایان دوره ابتدایی",
+                  to: "/news/updates",
+                },
               ].map((it, i) => (
-                <Link key={i} to={it.to} className="block rounded-xl border border-border bg-card p-4 hover:border-brand/40 transition-colors">
+                <Link
+                  key={i}
+                  to={it.to}
+                  className="block rounded-xl border border-border bg-card p-4 hover:border-brand/40 transition-colors"
+                >
                   <div className="flex items-center gap-2 text-xs">
-                    <span className="inline-flex items-center rounded-full bg-brand text-brand-foreground px-2 py-0.5">{it.tag}</span>
+                    <span className="inline-flex items-center rounded-full bg-brand text-brand-foreground px-2 py-0.5">
+                      {it.tag}
+                    </span>
                     <span className="text-muted-foreground">{it.d}</span>
                   </div>
                   <div className="mt-2 text-[15px] font-semibold text-primary">{it.t}</div>
@@ -300,8 +523,12 @@ function Home() {
               ))}
             </div>
             <div className="mt-4 flex gap-2">
-              <Button asChild variant="outline" size="sm"><Link to="/news/updates">همه اخبار</Link></Button>
-              <Button asChild variant="ghost" size="sm"><Link to="/news/calendar">تقویم آموزشی</Link></Button>
+              <Button asChild variant="outline" size="sm">
+                <Link to="/news/updates">همه اخبار</Link>
+              </Button>
+              <Button asChild variant="ghost" size="sm">
+                <Link to="/news/calendar">تقویم آموزشی</Link>
+              </Button>
             </div>
           </div>
 
@@ -310,12 +537,23 @@ function Home() {
             <div className="grid grid-cols-3 gap-2">
               {[libImg, sportsImg, tripImg].map((src, i) => (
                 <div key={i} className="aspect-square rounded-xl overflow-hidden bg-muted">
-                  <img src={src} alt="گالری زندگی مدرسه" loading="lazy" width={512} height={512} className="h-full w-full object-cover hover:scale-105 transition-transform" />
+                  <img
+                    src={src}
+                    alt="گالری زندگی مدرسه"
+                    loading="lazy"
+                    width={512}
+                    height={512}
+                    className="h-full w-full object-cover hover:scale-105 transition-transform"
+                  />
                 </div>
               ))}
             </div>
             <div className="mt-4">
-              <Button asChild variant="outline" size="sm"><Link to="/gallery"><ImageIcon className="size-4 ml-1" /> مشاهده گالری</Link></Button>
+              <Button asChild variant="outline" size="sm">
+                <Link to="/gallery">
+                  <ImageIcon className="size-4 ml-1" /> مشاهده گالری
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -328,7 +566,9 @@ function Home() {
           <Card className="p-5">
             <Phone className="size-5 text-brand mb-3" />
             <div className="text-sm text-muted-foreground">تلفن مدرسه</div>
-            <div className="mt-1 font-semibold text-primary" dir="ltr">{site.phone}</div>
+            <div className="mt-1 font-semibold text-primary" dir="ltr">
+              {site.phone}
+            </div>
           </Card>
           <Card className="p-5">
             <Mail className="size-5 text-brand mb-3" />
@@ -339,7 +579,9 @@ function Home() {
             <MapPin className="size-5 text-brand mb-3" />
             <div className="text-sm text-muted-foreground">آدرس</div>
             <div className="mt-1 font-semibold text-primary">{site.address}</div>
-            <Button asChild variant="link" className="px-0 mt-1 text-brand"><Link to="/contact">مشاهده نقشه</Link></Button>
+            <Button asChild variant="link" className="px-0 mt-1 text-brand">
+              <Link to="/contact">مشاهده نقشه</Link>
+            </Button>
           </Card>
         </div>
       </Section>
@@ -347,7 +589,9 @@ function Home() {
   );
 }
 
-function toFa(n: number) { return String(n).replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[+d]); }
+function toFa(n: number) {
+  return String(n).replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[+d]);
+}
 
 // import Mail here to avoid duplication at top
 import { Mail } from "lucide-react";
