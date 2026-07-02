@@ -515,10 +515,10 @@ function Home() {
             </div>
           </Card>
 
-          <Card className="h-auto w-full rounded-lg border-sky-100 bg-white px-4 pt-4 pb-0 shadow-sm sm:h-[236px]">
-            <div className="flex h-full flex-col items-center gap-4 sm:flex-row">
-              <div className="min-w-0 flex-1">
-                <div className="mb-2 flex items-center justify-start gap-2 text-primary">
+          <Card className="overflow-hidden rounded-lg border-sky-100 bg-white shadow-sm">
+            <div className="flex h-full flex-row items-end justify-between gap-1">
+              <div className="min-w-0 flex-1 px-4 pt-4 pb-4">
+                <div className="mb-2 flex items-center gap-2 text-primary">
                   <BookOpen className="size-4" />
                   <h3 className="text-sm font-bold">درباره مجتمع</h3>
                 </div>
@@ -532,7 +532,7 @@ function Home() {
                   </Button>
                 </div>
               </div>
-              <div className="h-36 w-full max-w-56 shrink-0 overflow-hidden rounded-lg bg-sky-50/40 sm:h-40 sm:w-36">
+              <div className="h-40 w-28 shrink-0 overflow-hidden rounded-bl-lg self-end">
                 <img
                   src={heroImg}
                   alt="نمای مجتمع آموزشی ایرانیان مسقط"

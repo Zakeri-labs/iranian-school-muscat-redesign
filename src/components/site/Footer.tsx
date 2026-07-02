@@ -48,9 +48,9 @@ export function Footer() {
             {site.tagline}. مدرسه رسمی ایرانی در سلطنت عمان با سه مقطع ابتدایی، متوسطه اول و متوسطه دوم.
           </p>
           <ul className="text-sm space-y-2 text-primary-foreground/85">
-            <li className="flex items-start gap-2"><MapPin className="size-4 mt-0.5 text-brand" /> {site.address}</li>
-            <li className="flex items-center gap-2" dir="ltr"><Phone className="size-4 text-brand" /> {site.phone}</li>
-            <li className="flex items-center gap-2"><Mail className="size-4 text-brand" /> {site.email}</li>
+            <li className="flex items-start gap-2" dir="rtl"><MapPin className="size-4 mt-0.5 shrink-0 text-brand" /> {site.address}</li>
+            <li className="flex items-center gap-2" dir="rtl"><Phone className="size-4 shrink-0 text-brand" /> {site.phone}</li>
+            <li className="flex items-center gap-2" dir="rtl"><Mail className="size-4 shrink-0 text-brand" /> {site.email}</li>
           </ul>
         </div>
 
