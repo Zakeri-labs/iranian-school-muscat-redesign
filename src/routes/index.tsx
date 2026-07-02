@@ -20,6 +20,7 @@ import {
   Send,
   ClipboardCheck,
   ChevronLeft,
+  Quote,
   Image as ImageIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -441,72 +442,82 @@ function Home() {
 
       {/* Trust & School Identity */}
       <Section>
-        <div className="grid lg:grid-cols-3 gap-5">
-          <Card className="p-6 lg:col-span-1">
-            <div className="text-xs font-medium text-brand mb-2">درباره مجتمع</div>
-            <h3 className="text-xl font-bold text-primary">هویت رسمی، آموزش ایرانی</h3>
-            <p className="mt-3 text-sm text-muted-foreground leading-7">
-              {site.name} با بهره‌گیری از برنامه‌های آموزشی رسمی جمهوری اسلامی ایران و کادری مجرب،
-              در مسیر تعالی علمی و اخلاقی دانش‌آموزان گام برمی‌دارد.
-            </p>
-            <div className="mt-5 flex gap-2">
-              <Button asChild variant="outline" size="sm">
-                <Link to="/about">بیشتر بخوانید</Link>
-              </Button>
-              <Button asChild variant="ghost" size="sm">
-                <Link to="/about/mission">مأموریت و ارزش‌ها</Link>
-              </Button>
+        <div className="grid gap-4 lg:grid-cols-3">
+          <Card className="rounded-lg border-sky-100 bg-white p-3.5 shadow-sm">
+            <div className="mb-3 flex items-center gap-2 text-primary">
+              <CheckCircle2 className="size-4 text-brand" />
+              <h3 className="text-sm font-bold">اعتماد و هویت</h3>
             </div>
+            <ul className="space-y-2">
+              {[
+                { t: "هویت آموزشی ایرانی", i: BookOpen },
+                { t: "لینک‌های رسمی", i: Landmark },
+                { t: "منابع آموزشی", i: ClipboardCheck },
+              ].map(({ t, i: Icon }, idx) => (
+                <li
+                  key={idx}
+                  className="flex min-h-10 items-center justify-between gap-3 rounded-md border border-sky-100 bg-white/80 px-3 py-2 text-xs"
+                >
+                  <Icon className="size-4 shrink-0 text-primary" />
+                  <span className="flex-1 text-right text-muted-foreground">{t}</span>
+                </li>
+              ))}
+            </ul>
           </Card>
 
-          <Card className="p-6 lg:col-span-1">
-            <div className="text-xs font-medium text-brand mb-2">پیام مدیر</div>
-            <div className="flex items-start gap-4">
+          <Card className="relative min-h-40 overflow-hidden rounded-lg border-sky-100 bg-white p-3.5 shadow-sm">
+            <div className="flex items-start justify-between gap-3">
               <img
                 src={principalImg}
                 alt="مدیر مجتمع"
                 loading="lazy"
-                width={80}
-                height={80}
-                className="size-16 rounded-full object-cover shrink-0"
+                width={180}
+                height={220}
+                className="h-32 w-24 shrink-0 self-end rounded-t-xl object-cover object-top"
               />
-              <div>
-                <p className="text-sm text-foreground leading-7">
-                  «هدف ما تربیت نسلی دانا، مسئول و متعهد به ایران و آموزه‌های اسلامی است.»
-                </p>
-                <div className="mt-3 text-sm">
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center gap-2 text-primary">
+                  <Quote className="size-4 text-primary" />
+                  <h3 className="text-sm font-bold">پیام مدیر</h3>
+                </div>
+                <div className="mt-4 max-w-48 rounded-lg border border-sky-100 bg-white px-3 py-2 shadow-sm">
+                  <p className="text-xs leading-6 text-muted-foreground">
+                    هدف ما تربیت نسلی دانا، مسئول و متعهد به ایران و آموزه‌های اسلامی است.
+                  </p>
+                </div>
+                <div className="mt-3 text-xs leading-5">
                   <div className="font-semibold text-primary">دکتر سعید محمدی</div>
-                  <div className="text-xs text-muted-foreground">مدیر مجتمع</div>
+                  <div className="text-muted-foreground">مدیر مجتمع</div>
                 </div>
               </div>
             </div>
-            <div className="mt-5">
-              <Button asChild variant="outline" size="sm">
-                <Link to="/about/principal">پیام کامل</Link>
-              </Button>
-            </div>
           </Card>
 
-          <Card className="p-6 lg:col-span-1">
-            <div className="text-xs font-medium text-brand mb-2">اعتماد و هویت</div>
-            <ul className="space-y-3">
-              {[
-                { t: "برنامه درسی رسمی جمهوری اسلامی ایران", i: Landmark },
-                { t: "مجوز فعالیت رسمی در سلطنت عمان", i: CheckCircle2 },
-                { t: "کادر آموزشی و اداری مجرب", i: Users },
-              ].map(({ t, i: Icon }, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-sm">
-                  <div className="p-1.5 rounded-md bg-brand-soft text-brand mt-0.5">
-                    <Icon className="size-4" />
-                  </div>
-                  <span className="text-foreground leading-6">{t}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-5">
-              <Button asChild variant="outline" size="sm">
-                <Link to="/official-links">لینک‌های رسمی</Link>
-              </Button>
+          <Card className="rounded-lg border-sky-100 bg-white p-3.5 shadow-sm">
+            <div className="flex items-start gap-3">
+              <div className="min-w-0 flex-1">
+                <div className="mb-2 flex items-center gap-2 text-primary">
+                  <BookOpen className="size-4" />
+                  <h3 className="text-sm font-bold">درباره مجتمع</h3>
+                </div>
+                <p className="text-xs leading-6 text-muted-foreground">
+                  {site.name} با بهره‌گیری از برنامه‌های آموزشی رسمی جمهوری اسلامی ایران و کادری
+                  مجرب، در مسیر تعالی علمی اخلاقی دانش‌آموزان گام برمی‌دارد.
+                </p>
+                <div className="mt-3">
+                  <Button asChild variant="outline" size="sm" className="h-8 px-3 text-xs">
+                    <Link to="/about">بیشتر بخوانید</Link>
+                  </Button>
+                </div>
+              </div>
+              <img
+                src={heroImg}
+                alt="نمای مجتمع آموزشی ایرانیان مسقط"
+                loading="lazy"
+                width={240}
+                height={180}
+                className="h-28 w-28 shrink-0 rounded-lg object-cover"
+              />
             </div>
           </Card>
         </div>
@@ -520,36 +531,47 @@ function Home() {
             <div className="space-y-3">
               {[
                 {
-                  tag: "خبر",
-                  d: "۲۰ خرداد ۱۴۰۴",
-                  t: "بازدید علمی دانش‌آموزان از موزه علوم",
+                  day: "۲۴",
+                  month: "اردیبهشت",
+                  year: "۱۴۰۴",
+                  d: "اطلاعیه پیش‌ثبت‌نام سال تحصیلی ۱۴۰۴-۱۴۰۳",
+                  t: "فرآیند پیش‌ثبت‌نام دانش‌آموزان جدید از تاریخ مشخص‌شده آغاز خواهد شد.",
                   to: "/news/updates",
                 },
                 {
-                  tag: "اطلاعیه",
-                  d: "۱۵ خرداد ۱۴۰۴",
-                  t: "زمان‌بندی امتحانات پایان سال تحصیلی اعلام شد",
+                  day: "۱۸",
+                  month: "اردیبهشت",
+                  year: "۱۴۰۴",
+                  d: "زمان‌بندی امتحانات پایان‌ترم اعلام شد",
+                  t: "برنامه امتحانات پایان‌ترم به همراه جزئیات کلاس‌ها در بخش تقویم آموزشی منتشر شد.",
                   to: "/news",
                 },
                 {
-                  tag: "رویداد",
-                  d: "۱۰ خرداد ۱۴۰۴",
-                  t: "برگزاری جشن پایان دوره ابتدایی",
+                  day: "۱۲",
+                  month: "اردیبهشت",
+                  year: "۱۴۰۴",
+                  d: "برنامه جشن نیمه شعبان",
+                  t: "جشن ویژه نیمه شعبان با برنامه‌های متنوع فرهنگی و مذهبی در مدرسه برگزار می‌شود.",
                   to: "/news/updates",
                 },
-              ].map((it, i) => (
+              ].map((it) => (
                 <Link
-                  key={i}
+                  key={it.d}
                   to={it.to}
-                  className="block rounded-xl border border-border bg-card p-4 hover:border-brand/40 transition-colors"
+                  className="flex min-h-24 items-stretch gap-3 rounded-lg border border-sky-100 bg-white p-2 shadow-sm transition-colors hover:border-brand/40"
                 >
-                  <div className="flex items-center gap-2 text-xs">
-                    <span className="inline-flex items-center rounded-full bg-brand text-brand-foreground px-2 py-0.5">
-                      {it.tag}
-                    </span>
-                    <span className="text-muted-foreground">{it.d}</span>
+                  <div className="flex min-w-0 flex-1 flex-col justify-center px-2 text-right">
+                    <h3 className="text-sm font-bold leading-6 text-primary">{it.d}</h3>
+                    <p className="mt-1 line-clamp-2 text-xs leading-6 text-muted-foreground">
+                      {it.t}
+                    </p>
+                    <span className="mt-1 text-xs font-medium text-brand">مشاهده بیشتر</span>
                   </div>
-                  <div className="mt-2 text-[15px] font-semibold text-primary">{it.t}</div>
+                  <div className="flex w-14 shrink-0 flex-col items-center justify-center rounded-md bg-emerald-50 text-brand">
+                    <div className="text-lg font-bold leading-none">{it.day}</div>
+                    <div className="mt-1 text-[11px] font-medium">{it.month}</div>
+                    <div className="mt-1 text-[11px] font-semibold">{it.year}</div>
+                  </div>
                 </Link>
               ))}
             </div>
