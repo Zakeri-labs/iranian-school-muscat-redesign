@@ -23,6 +23,7 @@ import {
   Quote,
   Image as ImageIcon,
 } from "lucide-react";
+import type { SVGProps } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Section, SectionTitle } from "@/components/site/PageHeader";
@@ -649,25 +650,46 @@ function Home() {
       {/* Contact & Location */}
       <Section>
         <SectionTitle eyebrow="ارتباط" title="راه‌های ارتباطی" />
-        <div className="grid lg:grid-cols-3 gap-4">
-          <Card className="p-5">
-            <Phone className="size-5 text-brand mb-3" />
-            <div className="text-sm text-muted-foreground">تلفن مدرسه</div>
-            <div className="mt-1 font-semibold text-primary" dir="ltr">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <Card className="flex min-h-52 flex-col items-center justify-center p-5 text-center">
+            <div className="mb-4 flex size-16 items-center justify-center rounded-full bg-brand/10 text-brand">
+              <SolidPhoneIcon className="size-9" />
+            </div>
+            <div className="text-base font-bold text-primary">تلفن مدرسه</div>
+            <div className="mt-2 text-lg font-semibold text-primary" dir="ltr">
               {site.phone}
             </div>
           </Card>
-          <Card className="p-5">
-            <Mail className="size-5 text-brand mb-3" />
-            <div className="text-sm text-muted-foreground">ایمیل</div>
-            <div className="mt-1 font-semibold text-primary">{site.email}</div>
+          <Card className="flex min-h-52 flex-col items-center justify-center p-5 text-center">
+            <div className="mb-4 flex size-16 items-center justify-center rounded-full bg-brand/10 text-brand">
+              <SolidMailIcon className="size-9" />
+            </div>
+            <div className="text-base font-bold text-primary">ایمیل</div>
+            <div className="mt-2 break-all text-base font-semibold leading-7 text-primary">
+              {site.email}
+            </div>
           </Card>
-          <Card className="p-5">
-            <MapPin className="size-5 text-brand mb-3" />
-            <div className="text-sm text-muted-foreground">آدرس</div>
-            <div className="mt-1 font-semibold text-primary">{site.address}</div>
-            <Button asChild variant="link" className="px-0 mt-1 text-brand">
-              <Link to="/contact">مشاهده نقشه</Link>
+          <Card className="flex min-h-52 flex-col items-center justify-center p-5 text-center">
+            <div className="mb-4 flex size-16 items-center justify-center rounded-full bg-brand/10 text-brand">
+              <SolidLocationIcon className="size-9" />
+            </div>
+            <div className="text-base font-bold text-primary">آدرس</div>
+            <div className="mt-2 text-base font-semibold leading-7 text-primary">
+              {site.address}
+            </div>
+          </Card>
+          <Card className="flex min-h-52 flex-col items-center justify-center p-5 text-center">
+            <div className="mb-4 flex size-16 items-center justify-center rounded-full bg-brand/10 text-brand">
+              <SolidMapIcon className="size-9" />
+            </div>
+            <div className="text-base font-bold text-primary">لوکیشن و نقشه</div>
+            <div className="mt-2 text-base font-semibold leading-7 text-primary">
+              {site.address}
+            </div>
+            <Button asChild variant="link" className="mt-2 px-0 text-base text-brand">
+              <a href={site.mapUrl} target="_blank" rel="noreferrer">
+                مشاهده نقشه
+              </a>
             </Button>
           </Card>
         </div>
@@ -676,9 +698,38 @@ function Home() {
   );
 }
 
+function SolidPhoneIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.3-.3.74-.39 1.13-.26 1.24.41 2.57.63 3.96.63.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.85 21 3 13.15 3 3.5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.39.22 2.72.63 3.96.12.39.04.83-.27 1.13l-2.24 2.2Z" />
+    </svg>
+  );
+}
+
+function SolidMailIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm-.4 4.25-7.07 4.42a1 1 0 0 1-1.06 0L4.4 8.25a1 1 0 1 1 1.06-1.7L12 10.64l6.54-4.09a1 1 0 1 1 1.06 1.7Z" />
+    </svg>
+  );
+}
+
+function SolidLocationIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z" />
+    </svg>
+  );
+}
+
+function SolidMapIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="m20.5 3-.16.03L15 5.1 9 3 3.36 4.9A.5.5 0 0 0 3 5.38V20.5a.5.5 0 0 0 .66.47L9 18.9l6 2.1 5.64-1.9a.5.5 0 0 0 .36-.48V3.5a.5.5 0 0 0-.5-.5ZM15 19l-6-2.11V5l6 2.11V19Z" />
+    </svg>
+  );
+}
+
 function toFa(n: number) {
   return String(n).replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[+d]);
 }
-
-// import Mail here to avoid duplication at top
-import { Mail } from "lucide-react";
