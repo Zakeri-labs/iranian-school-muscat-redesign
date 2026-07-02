@@ -211,14 +211,14 @@ function Home() {
             </div>
           </div>
           <div className="order-1">
-            <div className="mx-auto w-full max-w-[360px] overflow-hidden rounded-[2rem] border border-border bg-muted shadow-sm">
+            <div className="mx-auto w-full max-w-sm sm:max-w-md lg:max-w-[480px] overflow-hidden rounded-[2rem] border border-border bg-muted shadow-sm">
               <img
                 src={parentsAccessImg}
                 alt="گفت‌وگوی والدین با مشاور مدرسه"
                 loading="lazy"
                 width={702}
                 height={784}
-                className="aspect-[7/8] h-full w-full object-cover"
+                className="w-full h-auto block"
               />
             </div>
           </div>
