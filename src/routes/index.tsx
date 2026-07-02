@@ -33,9 +33,14 @@ import elemImg from "@/assets/stage-elementary.jpg";
 import middleImg from "@/assets/stage-middle.jpg";
 import highImg from "@/assets/stage-high.jpg";
 import principalImg from "@/assets/principal.jpg";
-import libImg from "@/assets/life-library.jpg";
-import sportsImg from "@/assets/life-sports.jpg";
-import tripImg from "@/assets/life-trip.jpg";
+import schoolLifeImg1 from "@/assets/1.jpg";
+import schoolLifeImg2 from "@/assets/2.jpg";
+import schoolLifeImg3 from "@/assets/3.jpg";
+import schoolLifeImg4 from "@/assets/4.jpg";
+import schoolLifeImg5 from "@/assets/5.jpg";
+import schoolLifeImg6 from "@/assets/6.jpg";
+import schoolLifeImg7 from "@/assets/7.jpg";
+import schoolLifeImg8 from "@/assets/8.jpg";
 import parentsAccessImg from "@/assets/parents-access.jpg";
 
 export const Route = createFileRoute("/")({
@@ -545,7 +550,7 @@ function Home() {
 
       {/* School life + Latest updates */}
       <Section className="bg-surface !py-14">
-        <div className="container mx-auto grid lg:grid-cols-2 gap-8">
+        <div className="container mx-auto grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)]">
           <div>
             <SectionTitle eyebrow="اطلاعیه‌ها" title="آخرین اخبار و اطلاعیه‌ها" />
             <div className="space-y-3">
@@ -607,8 +612,17 @@ function Home() {
 
           <div>
             <SectionTitle eyebrow="زندگی مدرسه" title="نگاهی به زندگی مدرسه" />
-            <div className="grid grid-cols-3 gap-2">
-              {[libImg, sportsImg, tripImg].map((src, i) => (
+            <div className="grid grid-cols-4 gap-2">
+              {[
+                schoolLifeImg1,
+                schoolLifeImg2,
+                schoolLifeImg3,
+                schoolLifeImg4,
+                schoolLifeImg5,
+                schoolLifeImg6,
+                schoolLifeImg7,
+                schoolLifeImg8,
+              ].map((src, i) => (
                 <div key={i} className="aspect-square rounded-xl overflow-hidden bg-muted">
                   <img
                     src={src}
