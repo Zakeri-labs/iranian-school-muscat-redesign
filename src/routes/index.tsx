@@ -361,6 +361,8 @@ function Home() {
               {
                 t: "والدین",
                 i: Users,
+                cardClass: "bg-rose-50/80 border-rose-100",
+                iconClass: "bg-white/70 text-rose-500",
                 links: [
                   { t: "منابع والدین", to: "/resources/parents" },
                   { t: "شهریه و پرداخت", to: "/admissions/tuition" },
@@ -370,6 +372,8 @@ function Home() {
               {
                 t: "دانش‌آموزان",
                 i: GraduationCap,
+                cardClass: "bg-sky-50/80 border-sky-100",
+                iconClass: "bg-white/70 text-sky-500",
                 links: [
                   { t: "منابع دانش‌آموزان", to: "/resources/students" },
                   { t: "تقویم امتحانات", to: "/news/calendar" },
@@ -379,6 +383,8 @@ function Home() {
               {
                 t: "معلمان",
                 i: School,
+                cardClass: "bg-emerald-50/80 border-emerald-100",
+                iconClass: "bg-white/70 text-emerald-500",
                 links: [
                   { t: "منابع معلمان", to: "/resources/teachers" },
                   { t: "آیین‌نامه‌ها", to: "/resources/policies" },
@@ -388,6 +394,8 @@ function Home() {
               {
                 t: "کادر اداری",
                 i: UserCog,
+                cardClass: "bg-amber-50/80 border-amber-100",
+                iconClass: "bg-white/70 text-amber-500",
                 links: [
                   { t: "دانلود فرم‌ها", to: "/resources/forms" },
                   { t: "مدیریت مجتمع", to: "/about/leadership" },
@@ -397,16 +405,18 @@ function Home() {
               {
                 t: "مراجع رسمی",
                 i: Landmark,
+                cardClass: "bg-violet-50/80 border-violet-100",
+                iconClass: "bg-white/70 text-violet-500",
                 links: [
                   { t: "لینک‌های رسمی", to: "/official-links" },
                   { t: "درباره مجتمع", to: "/about" },
                   { t: "تماس با ما", to: "/contact" },
                 ],
               },
-            ].map(({ t, i: Icon, links }) => (
-              <Card key={t} className="p-5">
-                <div className="flex items-center gap-2 text-brand">
-                  <div className="p-2 rounded-lg bg-brand-soft">
+            ].map(({ t, i: Icon, links, cardClass, iconClass }) => (
+              <Card key={t} className={`p-5 ${cardClass}`}>
+                <div className="flex items-center gap-2">
+                  <div className={`p-2 rounded-lg ${iconClass}`}>
                     <Icon className="size-4" />
                   </div>
                   <h3 className="font-semibold text-primary">{t}</h3>
