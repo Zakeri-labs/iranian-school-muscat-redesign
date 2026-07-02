@@ -442,8 +442,8 @@ function Home() {
 
       {/* Trust & School Identity */}
       <Section>
-        <div className="grid gap-4 lg:grid-cols-3">
-          <Card className="w-fit justify-self-start rounded-lg border-sky-100 bg-white p-3.5 shadow-sm">
+        <div className="grid items-start gap-4 lg:grid-cols-[220px_444px_410px] lg:justify-center lg:gap-x-5">
+          <Card className="h-[236px] w-[220px] justify-self-start rounded-lg border-sky-100 bg-white p-3.5 shadow-sm">
             <div className="mb-3 flex items-center gap-2 text-primary">
               <CheckCircle2 className="size-4 text-brand" />
               <h3 className="text-sm font-bold">اعتماد و هویت</h3>
@@ -482,9 +482,9 @@ function Home() {
             </ul>
           </Card>
 
-          <Card className="relative min-h-48 w-full min-w-[380px] justify-self-start overflow-hidden rounded-lg border-sky-100 bg-white shadow-sm">
-            <div className="flex min-h-48 items-stretch justify-between gap-4">
-              <div className="min-w-0 flex-1 p-4">
+          <Card className="relative h-[236px] w-full justify-self-start overflow-hidden rounded-lg border-sky-100 bg-white shadow-sm">
+            <div className="flex h-full items-center justify-start gap-1">
+              <div className="min-w-0 w-[280px] p-4">
                 <div className="flex items-center gap-2 text-primary">
                   <Quote className="size-4 text-primary" />
                   <h3 className="text-sm font-bold">پیام مدیر مجتمع</h3>
@@ -498,21 +498,21 @@ function Home() {
                   <div className="font-semibold text-primary">آقای دکتر خلیل جوادیار</div>
                 </div>
               </div>
-              <div className="w-40 shrink-0 self-stretch overflow-hidden">
+              <div className="h-52 w-40 shrink-0 self-end overflow-hidden">
                 <img
                   src={principalImg}
                   alt="مدیر مجتمع"
                   loading="lazy"
-                  width={280}
-                  height={360}
+                  width={320}
+                  height={416}
                   className="h-full w-full object-cover object-top"
                 />
               </div>
             </div>
           </Card>
 
-          <Card className="rounded-lg border-sky-100 bg-white p-4 shadow-sm">
-            <div className="flex items-center gap-4">
+          <Card className="mr-4 h-[236px] w-full rounded-lg border-sky-100 bg-white px-4 pt-4 pb-0 shadow-sm lg:mr-0">
+            <div className="flex h-full items-center gap-4">
               <div className="min-w-0 flex-1">
                 <div className="mb-2 flex items-center justify-start gap-2 text-primary">
                   <BookOpen className="size-4" />
@@ -528,7 +528,7 @@ function Home() {
                   </Button>
                 </div>
               </div>
-              <div className="aspect-square w-36 shrink-0 overflow-hidden rounded-lg bg-sky-50/40">
+              <div className="h-40 w-36 shrink-0 overflow-hidden rounded-lg bg-sky-50/40">
                 <img
                   src={heroImg}
                   alt="نمای مجتمع آموزشی ایرانیان مسقط"
