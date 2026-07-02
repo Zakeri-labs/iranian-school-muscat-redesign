@@ -486,14 +486,14 @@ function Home() {
             </ul>
           </Card>
 
-          <Card className="relative h-auto w-full justify-self-start overflow-hidden rounded-lg border-sky-100 bg-white shadow-sm sm:h-[236px]">
-            <div className="flex h-full flex-col items-center justify-start gap-3 sm:flex-row sm:gap-1">
-              <div className="min-w-0 w-full p-4 sm:w-[280px]">
+          <Card className="relative overflow-hidden rounded-lg border-sky-100 bg-white shadow-sm">
+            <div className="flex h-full flex-row items-end justify-between gap-1">
+              <div className="min-w-0 flex-1 p-4">
                 <div className="flex items-center gap-2 text-primary">
                   <Quote className="size-4 text-primary" />
                   <h3 className="text-sm font-bold">پیام مدیر مجتمع</h3>
                 </div>
-                <div className="mt-4 max-w-56 rounded-lg border border-sky-100 bg-white px-3 py-2 shadow-sm">
+                <div className="mt-4 rounded-lg border border-sky-100 bg-white px-3 py-2 shadow-sm">
                   <p className="text-xs leading-6 text-muted-foreground">
                     هدف ما تربیت نسلی دانا، مسئول و متعهد به ایران و آموزه‌های اسلامی است.
                   </p>
@@ -502,7 +502,7 @@ function Home() {
                   <div className="font-semibold text-primary">آقای دکتر خلیل جوادیار</div>
                 </div>
               </div>
-              <div className="h-40 w-32 shrink-0 overflow-hidden sm:h-52 sm:w-40 sm:self-end">
+              <div className="h-40 w-28 shrink-0 overflow-hidden self-end">
                 <img
                   src={principalImg}
                   alt="مدیر مجتمع"
