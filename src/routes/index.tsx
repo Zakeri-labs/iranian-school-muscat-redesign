@@ -29,7 +29,7 @@ import { Card } from "@/components/ui/card";
 import { Section, SectionTitle } from "@/components/site/PageHeader";
 import { site } from "@/lib/site";
 
-import heroImg from "@/assets/hero-campus.jpg";
+import heroImg from "@/assets/hero-image.jpg";
 import elemImg from "@/assets/stage-elementary.jpg";
 import middleImg from "@/assets/stage-middle.jpg";
 import highImg from "@/assets/stage-high.jpg";
@@ -84,7 +84,7 @@ function Home() {
             <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 backdrop-blur px-3 py-1 text-xs font-medium border border-primary-foreground/20">
               <MapPin className="size-3.5" /> {site.addressShort}
             </div>
-            <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight">{site.name}</h1>
+            <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight text-white">{site.name}</h1>
             <p className="mt-3 text-lg md:text-xl text-primary-foreground/90">{site.tagline}</p>
             <p className="mt-3 text-primary-foreground/80 leading-8 max-w-xl">
               مدرسه رسمی ایرانی برای دانش‌آموزان مقاطع ابتدایی، متوسطه اول و متوسطه دوم در مسقط،
