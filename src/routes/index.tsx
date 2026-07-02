@@ -448,13 +448,13 @@ function Home() {
 
       {/* Trust & School Identity */}
       <Section>
-        <div className="grid items-start gap-4 xl:grid-cols-[220px_444px_410px] xl:justify-center xl:gap-x-5">
-          <Card className="h-[236px] w-[220px] justify-self-start rounded-lg border-sky-100 bg-white p-3.5 shadow-sm">
+        <div className="grid items-stretch gap-4 sm:grid-cols-3">
+          <Card className="rounded-lg border-sky-100 bg-white p-3.5 shadow-sm">
             <div className="mb-3 flex items-center gap-2 text-primary">
               <CheckCircle2 className="size-4 text-brand" />
               <h3 className="text-sm font-bold">اعتماد و هویت</h3>
             </div>
-            <ul className="mr-0 flex w-fit flex-col items-stretch gap-2">
+            <ul className="flex w-full flex-col gap-2">
               {[
                 { t: "هویت آموزشی ایرانی", i: BookOpen },
                 { t: "لینک‌های رسمی", i: Landmark, to: "/official-links" },
@@ -462,9 +462,7 @@ function Home() {
               ].map(({ t, i: Icon, to }, idx) => {
                 const content = (
                   <>
-                    <span className="flex-1 whitespace-nowrap text-right text-muted-foreground">
-                      {t}
-                    </span>
+                    <span className="flex-1 text-right text-muted-foreground">{t}</span>
                     <Icon className="size-[18px] shrink-0 text-primary" />
                   </>
                 );
@@ -473,7 +471,7 @@ function Home() {
                   <li
                     key={idx}
                     dir="rtl"
-                    className="flex min-h-11 w-44 max-w-full items-center gap-3 rounded-md border border-sky-100 bg-white/80 px-4 py-2 text-sm"
+                    className="flex min-h-11 w-full items-center gap-3 rounded-md border border-sky-100 bg-white/80 px-4 py-2 text-sm"
                   >
                     {to ? (
                       <Link to={to} className="flex flex-1 items-center gap-3 hover:text-brand">
