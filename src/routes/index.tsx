@@ -443,60 +443,78 @@ function Home() {
       {/* Trust & School Identity */}
       <Section>
         <div className="grid gap-4 lg:grid-cols-3">
-          <Card className="rounded-lg border-sky-100 bg-white p-3.5 shadow-sm">
+          <Card className="w-fit justify-self-start rounded-lg border-sky-100 bg-white p-3.5 shadow-sm">
             <div className="mb-3 flex items-center gap-2 text-primary">
               <CheckCircle2 className="size-4 text-brand" />
               <h3 className="text-sm font-bold">اعتماد و هویت</h3>
             </div>
-            <ul className="space-y-2">
+            <ul className="mr-0 flex w-fit flex-col items-stretch gap-2">
               {[
                 { t: "هویت آموزشی ایرانی", i: BookOpen },
-                { t: "لینک‌های رسمی", i: Landmark },
+                { t: "لینک‌های رسمی", i: Landmark, to: "/official-links" },
                 { t: "منابع آموزشی", i: ClipboardCheck },
-              ].map(({ t, i: Icon }, idx) => (
-                <li
-                  key={idx}
-                  className="flex min-h-10 items-center justify-between gap-3 rounded-md border border-sky-100 bg-white/80 px-3 py-2 text-xs"
-                >
-                  <Icon className="size-4 shrink-0 text-primary" />
-                  <span className="flex-1 text-right text-muted-foreground">{t}</span>
-                </li>
-              ))}
+              ].map(({ t, i: Icon, to }, idx) => {
+                const content = (
+                  <>
+                    <span className="flex-1 whitespace-nowrap text-right text-muted-foreground">
+                      {t}
+                    </span>
+                    <Icon className="size-[18px] shrink-0 text-primary" />
+                  </>
+                );
+
+                return (
+                  <li
+                    key={idx}
+                    dir="rtl"
+                    className="flex min-h-11 w-44 max-w-full items-center gap-3 rounded-md border border-sky-100 bg-white/80 px-4 py-2 text-sm"
+                  >
+                    {to ? (
+                      <Link to={to} className="flex flex-1 items-center gap-3 hover:text-brand">
+                        {content}
+                      </Link>
+                    ) : (
+                      content
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </Card>
 
-          <Card className="relative min-h-40 overflow-hidden rounded-lg border-sky-100 bg-white p-3.5 shadow-sm">
-            <div className="flex items-start justify-between gap-3">
-              <img
-                src={principalImg}
-                alt="مدیر مجتمع"
-                loading="lazy"
-                width={180}
-                height={220}
-                className="h-32 w-24 shrink-0 self-end rounded-t-xl object-cover object-top"
-              />
-              <div className="min-w-0 flex-1">
+          <Card className="relative min-h-48 w-full min-w-[380px] justify-self-start overflow-hidden rounded-lg border-sky-100 bg-white shadow-sm">
+            <div className="flex min-h-48 items-stretch justify-between gap-4">
+              <div className="min-w-0 flex-1 p-4">
                 <div className="flex items-center gap-2 text-primary">
                   <Quote className="size-4 text-primary" />
-                  <h3 className="text-sm font-bold">پیام مدیر</h3>
+                  <h3 className="text-sm font-bold">پیام مدیر مجتمع</h3>
                 </div>
-                <div className="mt-4 max-w-48 rounded-lg border border-sky-100 bg-white px-3 py-2 shadow-sm">
+                <div className="mt-4 max-w-56 rounded-lg border border-sky-100 bg-white px-3 py-2 shadow-sm">
                   <p className="text-xs leading-6 text-muted-foreground">
                     هدف ما تربیت نسلی دانا، مسئول و متعهد به ایران و آموزه‌های اسلامی است.
                   </p>
                 </div>
                 <div className="mt-3 text-xs leading-5">
-                  <div className="font-semibold text-primary">دکتر سعید محمدی</div>
-                  <div className="text-muted-foreground">مدیر مجتمع</div>
+                  <div className="font-semibold text-primary">آقای دکتر خلیل جوادیار</div>
                 </div>
+              </div>
+              <div className="w-40 shrink-0 self-stretch overflow-hidden">
+                <img
+                  src={principalImg}
+                  alt="مدیر مجتمع"
+                  loading="lazy"
+                  width={280}
+                  height={360}
+                  className="h-full w-full object-cover object-top"
+                />
               </div>
             </div>
           </Card>
 
-          <Card className="rounded-lg border-sky-100 bg-white p-3.5 shadow-sm">
-            <div className="flex items-start gap-3">
+          <Card className="rounded-lg border-sky-100 bg-white p-4 shadow-sm">
+            <div className="flex items-center gap-4">
               <div className="min-w-0 flex-1">
-                <div className="mb-2 flex items-center gap-2 text-primary">
+                <div className="mb-2 flex items-center justify-start gap-2 text-primary">
                   <BookOpen className="size-4" />
                   <h3 className="text-sm font-bold">درباره مجتمع</h3>
                 </div>
@@ -510,14 +528,16 @@ function Home() {
                   </Button>
                 </div>
               </div>
-              <img
-                src={heroImg}
-                alt="نمای مجتمع آموزشی ایرانیان مسقط"
-                loading="lazy"
-                width={240}
-                height={180}
-                className="h-28 w-28 shrink-0 rounded-lg object-cover"
-              />
+              <div className="aspect-square w-36 shrink-0 overflow-hidden rounded-lg bg-sky-50/40">
+                <img
+                  src={heroImg}
+                  alt="نمای مجتمع آموزشی ایرانیان مسقط"
+                  loading="lazy"
+                  width={320}
+                  height={240}
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </div>
           </Card>
         </div>

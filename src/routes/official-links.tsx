@@ -10,13 +10,18 @@ const links = [
   { t: "وزارت آموزش سلطنت عمان", u: "https://moe.gov.om" },
   { t: "سازمان سنجش آموزش کشور", u: "https://sanjesh.org" },
   { t: "سامانه پیک ادوکیت", u: "https://my.medu.ir" },
+  { t: "پایگاه اطلاع‌رسانی ریاست جمهوری اسلامی ایران", u: "https://president.ir/" },
+  { t: "پایگاه اطلاع‌رسانی دفتر مقام معظم رهبری", u: "https://www.leader.ir/fa" },
 ];
 
 export const Route = createFileRoute("/official-links")({
   head: () => ({
     meta: [
       { title: "لینک‌های رسمی — مجتمع آموزشی ایرانیان مسقط" },
-      { name: "description", content: "پیوند به مراجع رسمی و نهادهای مرتبط با مجتمع آموزشی ایرانیان مسقط." },
+      {
+        name: "description",
+        content: "پیوند به مراجع رسمی و نهادهای مرتبط با مجتمع آموزشی ایرانیان مسقط.",
+      },
       { property: "og:title", content: "لینک‌های رسمی" },
       { property: "og:description", content: "پیوندهای مرجع." },
       { property: "og:url", content: "/official-links" },
@@ -29,7 +34,12 @@ export const Route = createFileRoute("/official-links")({
 function LinksPage() {
   return (
     <>
-      <PageHeader eyebrow="مراجع" title="لینک‌های رسمی" description="پیوند به نهادها و مراجع رسمی مرتبط." crumbs={[{ t: "لینک‌های رسمی" }]} />
+      <PageHeader
+        eyebrow="مراجع"
+        title="لینک‌های رسمی"
+        description="پیوند به نهادها و مراجع رسمی مرتبط."
+        crumbs={[{ t: "لینک‌های رسمی" }]}
+      />
       <Section>
         <div className="grid md:grid-cols-2 gap-3">
           {links.map((l) => (
