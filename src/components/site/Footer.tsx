@@ -78,9 +78,9 @@ export function Footer() {
             <Link to="/official-links" className="hover:text-brand">لینک‌های رسمی</Link>
           </div>
           <div className="flex items-center gap-3">
-            <a href="#" aria-label="اینستاگرام" className="p-2 rounded-full bg-primary-foreground/5 hover:bg-brand hover:text-brand-foreground transition-colors"><Instagram className="size-4" /></a>
-            <a href="#" aria-label="تلگرام" className="p-2 rounded-full bg-primary-foreground/5 hover:bg-brand hover:text-brand-foreground transition-colors"><Send className="size-4" /></a>
-            <a href="#" aria-label="واتساپ" className="p-2 rounded-full bg-primary-foreground/5 hover:bg-brand hover:text-brand-foreground transition-colors"><MessageCircle className="size-4" /></a>
+            <a href={site.instagram} target="_blank" rel="noreferrer" aria-label="اینستاگرام" className="p-2 rounded-full bg-primary-foreground/5 hover:bg-brand hover:text-brand-foreground transition-colors"><Instagram className="size-4" /></a>
+            <a href={site.telegram} target="_blank" rel="noreferrer" aria-label="تلگرام" className="p-2 rounded-full bg-primary-foreground/5 hover:bg-brand hover:text-brand-foreground transition-colors"><Send className="size-4" /></a>
+            <a href={site.whatsappUrl} target="_blank" rel="noreferrer" aria-label="واتساپ" className="p-2 rounded-full bg-primary-foreground/5 hover:bg-brand hover:text-brand-foreground transition-colors"><MessageCircle className="size-4" /></a>
           </div>
           <div>© تمامی حقوق برای {site.name} محفوظ است.</div>
         </div>

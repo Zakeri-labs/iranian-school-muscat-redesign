@@ -145,7 +145,7 @@ export function MobileStickyBar() {
         <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="flex flex-col items-center justify-center gap-1 py-2 text-[11px] min-h-14 text-foreground hover:bg-secondary">
           <Phone className="size-5 text-brand" /> تماس
         </a>
-        <a href={`https://wa.me/${site.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noreferrer" className="flex flex-col items-center justify-center gap-1 py-2 text-[11px] min-h-14 text-foreground hover:bg-secondary">
+        <a href={site.whatsappUrl} target="_blank" rel="noreferrer" className="flex flex-col items-center justify-center gap-1 py-2 text-[11px] min-h-14 text-foreground hover:bg-secondary">
           <MessageCircle className="size-5 text-brand" /> واتساپ
         </a>
         <Link to="/admissions" className="flex flex-col items-center justify-center gap-1 py-2 text-[11px] min-h-14 text-foreground hover:bg-secondary">

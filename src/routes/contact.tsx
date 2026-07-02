@@ -93,9 +93,9 @@ function ContactPage() {
                 <MessageCircle className="size-5 text-brand mt-0.5" />
                 <div>
                   <div className="text-xs text-muted-foreground">واتساپ</div>
-                  <div className="font-semibold text-primary" dir="ltr">
+                  <a href={site.whatsappUrl} target="_blank" rel="noreferrer" className="font-semibold text-primary hover:text-brand transition-colors" dir="ltr">
                     {site.whatsapp}
-                  </div>
+                  </a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
