@@ -174,14 +174,14 @@ function Home() {
 
       {/* Quick access for parents */}
       <Section>
-        <div className="grid items-center gap-8 lg:grid-cols-[minmax(280px,360px)_minmax(0,1fr)] xl:gap-10">
-          <div className="order-2">
+        <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto] xl:gap-12">
+          <div className="order-2 lg:order-1">
             <SectionTitle
               eyebrow="والدین"
               title="دسترسی سریع والدین"
               description="پرکاربردترین بخش‌های مدرسه در یک نگاه."
             />
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
               {[
                 { t: "ثبت‌نام", to: "/admissions", i: ClipboardList },
                 { t: "شهریه و پرداخت", to: "/admissions/tuition", i: CreditCard },
@@ -195,23 +195,23 @@ function Home() {
                 <Link
                   key={to}
                   to={to}
-                  className="group relative min-h-32 rounded-2xl border border-border bg-card p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-md sm:min-h-36 lg:min-h-40 xl:min-h-44"
+                  className="group relative rounded-2xl border border-border bg-card p-3 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-md"
                 >
-                  <div className="flex h-full flex-col items-center justify-center text-center">
-                    <Icon className="size-10 text-primary transition-colors group-hover:text-brand sm:size-12" />
-                    <div className="mt-4 text-[14px] font-bold text-primary transition-colors group-hover:text-brand sm:text-base">
+                  <div className="flex flex-col items-center justify-center text-center py-2">
+                    <Icon className="size-7 text-primary transition-colors group-hover:text-brand sm:size-8" />
+                    <div className="mt-2.5 text-[13px] font-bold text-primary transition-colors group-hover:text-brand leading-tight">
                       {t}
                     </div>
                   </div>
-                  <span className="absolute bottom-4 right-4 inline-flex size-8 items-center justify-center rounded-full border border-border bg-background text-primary transition-colors group-hover:border-brand/40 group-hover:bg-brand group-hover:text-brand-foreground">
-                    <ChevronLeft className="size-4" />
+                  <span className="absolute bottom-2.5 right-2.5 inline-flex size-6 items-center justify-center rounded-full border border-border bg-background text-primary transition-colors group-hover:border-brand/40 group-hover:bg-brand group-hover:text-brand-foreground">
+                    <ChevronLeft className="size-3" />
                   </span>
                 </Link>
               ))}
             </div>
           </div>
-          <div className="order-1">
-            <div className="mx-auto w-full max-w-sm sm:max-w-md lg:max-w-[480px] overflow-hidden rounded-[2rem] border border-border bg-muted shadow-sm">
+          <div className="order-1 lg:order-2">
+            <div className="mx-auto w-full max-w-sm sm:max-w-md lg:w-[340px] xl:w-[400px] overflow-hidden rounded-[2rem] border border-border bg-muted shadow-sm">
               <img
                 src={parentsAccessImg}
                 alt="گفت‌وگوی والدین با مشاور مدرسه"
