@@ -238,7 +238,7 @@ function Home() {
           </div>
 
           <div className="relative mt-10">
-            <div className="absolute inset-x-[10%] top-12 hidden h-1 rounded-full bg-border lg:block" />
+            <div className="absolute inset-x-[8%] top-1/2 hidden h-1 -translate-y-1/2 rounded-full bg-border lg:block" />
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
               {[
                 {
@@ -266,18 +266,21 @@ function Home() {
                   i: CheckCircle2,
                 },
               ].map(({ n, t, d, i: Icon }) => (
-                <div key={n} className="relative">
-                  <div className="mx-auto flex size-24 items-center justify-center rounded-full border border-brand/20 bg-surface p-2">
-                    <div className="flex size-16 items-center justify-center rounded-2xl bg-brand text-brand-foreground shadow-sm">
-                      <Icon className="size-7" />
-                    </div>
-                  </div>
-                  <div className="mt-4 rounded-2xl border border-border bg-card p-5 text-center shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-md">
-                    <div className="mx-auto -mt-8 mb-4 flex size-9 items-center justify-center rounded-full bg-brand text-base font-bold text-brand-foreground shadow-sm ring-[3px] ring-card">
+                <div
+                  key={n}
+                  className="relative z-10 grid min-h-40 grid-cols-[auto_1fr] items-center gap-4 rounded-2xl border border-border bg-card p-4 text-right shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-md sm:p-5"
+                >
+                  <div className="relative flex w-20 items-center justify-center rounded-2xl border border-brand/15 bg-brand-soft/70 p-3 sm:w-24">
+                    <div className="absolute -right-2 -top-2 flex size-8 items-center justify-center rounded-full bg-brand text-sm font-extrabold text-brand-foreground shadow-sm ring-[3px] ring-card">
                       {toFa(n)}
                     </div>
+                    <div className="flex size-12 items-center justify-center rounded-xl bg-brand text-brand-foreground shadow-sm sm:size-14">
+                      <Icon className="size-6 sm:size-7" />
+                    </div>
+                  </div>
+                  <div className="min-w-0">
                     <h3 className="font-bold text-primary">{t}</h3>
-                    <p className="mt-2 min-h-12 text-sm leading-6 text-muted-foreground">{d}</p>
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground">{d}</p>
                   </div>
                 </div>
               ))}
