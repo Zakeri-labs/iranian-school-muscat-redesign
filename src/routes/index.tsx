@@ -462,14 +462,14 @@ function Home() {
                   <div className={`p-2 rounded-lg ${iconClass}`}>
                     <Icon className="size-4" />
                   </div>
-                  <h3 className="font-semibold text-primary">{t}</h3>
+                  <h3 className="text-lg font-semibold text-primary">{t}</h3>
                 </div>
                 <ul className="mt-4 space-y-2">
                   {links.map(({ t: label, to }) => (
                     <li key={to}>
                       <Link
                         to={to}
-                        className="group/link flex items-center gap-2 text-sm text-muted-foreground hover:text-brand"
+                        className="group/link flex items-center gap-2 text-base text-muted-foreground hover:text-brand"
                       >
                         <span>{label}</span>
                         <span className="inline-flex size-5 shrink-0 items-center justify-center rounded-full border border-border text-primary/70 transition-colors group-hover/link:border-brand/40 group-hover/link:bg-brand group-hover/link:text-brand-foreground">
