@@ -21,7 +21,7 @@ const seoDescription =
   "ثبت‌نام فرزندان ایرانی در مسقط، در محیطی امن، منظم و خانواده‌محور؛ از پایه ابتدایی تا متوسطه، با تمرکز بر آموزش باکیفیت، رشد فردی و آرامش خاطر والدین.";
 const siteUrl = (import.meta.env.VITE_SITE_URL ?? "http://localhost:5173").replace(/\/+$/, "");
 const homeUrl = `${siteUrl}/`;
-const ogImageUrl = `${siteUrl}/og-image.jpg`;
+const ogImageUrl = `${siteUrl}/hero-image.jpg`;
 
 function NotFoundComponent() {
   return (
