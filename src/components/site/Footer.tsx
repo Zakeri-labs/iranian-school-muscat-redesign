@@ -8,7 +8,7 @@ const cols = [
     title: "درباره مجتمع",
     links: [
       { t: "معرفی", to: "/about" },
-      { t: "پیام مدیر", to: "/about/principal" },
+      { t: "آیین‌نامه‌ها", to: "/resources/policies" },
       { t: "مأموریت و ارزش‌ها", to: "/about/mission" },
       { t: "کادر اداری", to: "/about/leadership" },
       { t: "افتخارات", to: "/honors" },
@@ -32,6 +32,8 @@ const cols = [
       { t: "گالری تصاویر", to: "/gallery" },
       { t: "دانلود فرم‌ها", to: "/resources/forms" },
       { t: "پرسش‌های پرتکرار", to: "/faq" },
+      { t: "حریم خصوصی و دسترس‌پذیری", to: "/privacy" },
+      { t: "لینک‌های رسمی", to: "/official-links" },
     ],
   },
 ];
@@ -45,12 +47,19 @@ export function Footer() {
             <Logo />
           </div>
           <p className="text-sm text-primary-foreground/75 leading-7">
-            {site.tagline}. مدرسه رسمی ایرانی در سلطنت عمان با سه مقطع ابتدایی، متوسطه اول و متوسطه دوم.
+            {site.tagline}. مدرسه رسمی ایرانی در سلطنت عمان با سه مقطع ابتدایی، متوسطه اول و متوسطه
+            دوم.
           </p>
           <ul className="text-sm space-y-2 text-primary-foreground/85">
-            <li className="flex items-start gap-2" dir="rtl"><MapPin className="size-4 mt-0.5 shrink-0 text-brand" /> {site.address}</li>
-            <li className="flex items-center gap-2" dir="rtl"><Phone className="size-4 shrink-0 text-brand" /> {site.phone}</li>
-            <li className="flex items-center gap-2" dir="rtl"><Mail className="size-4 shrink-0 text-brand" /> {site.email}</li>
+            <li className="flex items-start gap-2" dir="rtl">
+              <MapPin className="size-4 mt-0.5 shrink-0 text-brand" /> {site.address}
+            </li>
+            <li className="flex items-center gap-2" dir="rtl">
+              <Phone className="size-4 shrink-0 text-brand" /> {site.phone}
+            </li>
+            <li className="flex items-center gap-2" dir="rtl">
+              <Mail className="size-4 shrink-0 text-brand" /> {site.email}
+            </li>
           </ul>
         </div>
 
@@ -60,7 +69,10 @@ export function Footer() {
             <ul className="space-y-2">
               {col.links.map((l) => (
                 <li key={l.to}>
-                  <Link to={l.to} className="text-sm text-primary-foreground/75 hover:text-brand transition-colors">
+                  <Link
+                    to={l.to}
+                    className="text-sm text-primary-foreground/75 hover:text-brand transition-colors"
+                  >
                     {l.t}
                   </Link>
                 </li>
@@ -71,18 +83,54 @@ export function Footer() {
       </div>
 
       <div className="border-t border-primary-foreground/10">
-        <div className="container mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-primary-foreground/70">
-          <div className="flex items-center gap-4">
-            <Link to="/privacy" className="hover:text-brand">حریم خصوصی و دسترس‌پذیری</Link>
-            <Link to="/resources/policies" className="hover:text-brand">آیین‌نامه‌ها</Link>
-            <Link to="/official-links" className="hover:text-brand">لینک‌های رسمی</Link>
+        <div
+          className="container mx-auto grid grid-cols-1 items-center gap-3 px-4 pb-24 pt-5 text-xs text-primary-foreground/70 md:grid-cols-[1fr_auto_1fr] lg:pb-5"
+          dir="ltr"
+        >
+          <div
+            className="min-w-0 justify-self-center text-center leading-6 md:justify-self-start md:text-left"
+            dir="rtl"
+          >
+            © تمامی حقوق برای {site.name} محفوظ است.
           </div>
-          <div className="flex items-center gap-3">
-            <a href={site.instagram} target="_blank" rel="noreferrer" aria-label="اینستاگرام" className="p-2 rounded-full bg-primary-foreground/5 hover:bg-brand hover:text-brand-foreground transition-colors"><Instagram className="size-4" /></a>
-            <a href={site.telegram} target="_blank" rel="noreferrer" aria-label="تلگرام" className="p-2 rounded-full bg-primary-foreground/5 hover:bg-brand hover:text-brand-foreground transition-colors"><Send className="size-4" /></a>
-            <a href={site.whatsappUrl} target="_blank" rel="noreferrer" aria-label="واتساپ" className="p-2 rounded-full bg-primary-foreground/5 hover:bg-brand hover:text-brand-foreground transition-colors"><MessageCircle className="size-4" /></a>
+          <div className="order-first flex items-center justify-center gap-3 md:order-none md:justify-self-center">
+            <a
+              href={site.instagram}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="اینستاگرام"
+              className="p-2 rounded-full bg-primary-foreground/5 hover:bg-brand hover:text-brand-foreground transition-colors"
+            >
+              <Instagram className="size-4" />
+            </a>
+            <a
+              href={site.telegram}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="تلگرام"
+              className="p-2 rounded-full bg-primary-foreground/5 hover:bg-brand hover:text-brand-foreground transition-colors"
+            >
+              <Send className="size-4" />
+            </a>
+            <a
+              href={site.whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="واتساپ"
+              className="p-2 rounded-full bg-primary-foreground/5 hover:bg-brand hover:text-brand-foreground transition-colors"
+            >
+              <MessageCircle className="size-4" />
+            </a>
           </div>
-          <div>© تمامی حقوق برای {site.name} محفوظ است.</div>
+          <a
+            href="https://www.zakeri.dev/"
+            target="_blank"
+            rel="noreferrer"
+            className="min-w-0 justify-self-center text-center leading-6 transition-colors hover:text-brand md:justify-self-end md:text-right"
+            dir="rtl"
+          >
+            طراحی شده توسط محمدرضا ذاکری
+          </a>
         </div>
       </div>
     </footer>
