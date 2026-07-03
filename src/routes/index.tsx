@@ -20,10 +20,11 @@ import {
   Send,
   ClipboardCheck,
   ChevronLeft,
+  ChevronRight,
   Quote,
   Image as ImageIcon,
 } from "lucide-react";
-import type { SVGProps } from "react";
+import { useRef, type SVGProps } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Section, SectionTitle } from "@/components/site/PageHeader";
@@ -49,6 +50,20 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  const stagesTrackRef = useRef<HTMLDivElement>(null);
+
+  const scrollStages = (direction: "previous" | "next") => {
+    const track = stagesTrackRef.current;
+    if (!track) return;
+
+    const card = track.querySelector<HTMLElement>("[data-stage-card]");
+    const step = card ? card.offsetWidth + 16 : track.clientWidth * 0.8;
+    track.scrollBy({
+      left: direction === "next" ? step : -step,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       {/* Hero */}
@@ -286,7 +301,34 @@ function Home() {
           title="مقاطع آموزشی"
           description="سه مقطع تحصیلی با برنامه درسی رسمی مصوب."
         />
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="mt-3 flex items-center justify-center gap-2 md:hidden">
+          <Button
+            type="button"
+            variant="outline"
+            size="icon"
+            className="size-10 rounded-full bg-background/90"
+            aria-label="نمایش کارت قبلی"
+            onClick={() => scrollStages("previous")}
+          >
+            <ChevronLeft className="size-5" />
+          </Button>
+          <Button
+            type="button"
+            variant="outline"
+            size="icon"
+            className="size-10 rounded-full bg-background/90"
+            aria-label="نمایش کارت بعدی"
+            onClick={() => scrollStages("next")}
+          >
+            <ChevronRight className="size-5" />
+          </Button>
+        </div>
+        <div
+          ref={stagesTrackRef}
+          dir="ltr"
+          aria-label="مقاطع آموزشی"
+          className="-mx-4 mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden"
+        >
           {[
             {
               t: "ابتدایی",
@@ -310,7 +352,12 @@ function Home() {
               i: GraduationCap,
             },
           ].map(({ t, d, to, img, i: Icon }) => (
-            <Card key={to} className="overflow-hidden group">
+            <Card
+              key={to}
+              data-stage-card
+              className="min-w-[76%] snap-start overflow-hidden group md:min-w-0 md:snap-none"
+              dir="rtl"
+            >
               <div className="aspect-[16/10] overflow-hidden bg-muted">
                 <img
                   src={img}
@@ -434,7 +481,7 @@ function Home() {
 
       {/* Trust & School Identity */}
       <Section>
-        <div className="grid items-stretch gap-4 sm:grid-cols-3">
+        <div className="grid items-stretch gap-4 md:grid-cols-2 xl:grid-cols-3">
           <Card className="rounded-lg border-sky-100 bg-white p-3.5 shadow-sm">
             <div className="mb-3 flex items-center gap-2 text-primary">
               <CheckCircle2 className="size-4 text-brand" />
@@ -472,8 +519,8 @@ function Home() {
             </ul>
           </Card>
 
-          <Card className="relative overflow-hidden rounded-lg border-sky-100 bg-white shadow-sm">
-            <div className="flex h-full flex-row items-end justify-between gap-1">
+          <Card className="relative min-h-44 overflow-hidden rounded-lg border-sky-100 bg-white shadow-sm">
+            <div className="flex h-full flex-row items-stretch justify-between gap-1">
               <div className="min-w-0 flex-1 p-4">
                 <div className="flex items-center gap-2 text-primary">
                   <Quote className="size-4 text-primary" />
@@ -488,7 +535,7 @@ function Home() {
                   <div className="font-semibold text-primary">آقای دکتر خلیل جوادیار</div>
                 </div>
               </div>
-              <div className="h-40 w-28 shrink-0 overflow-hidden self-end">
+              <div className="w-28 shrink-0 self-stretch overflow-hidden">
                 <img
                   src={principalImg}
                   alt="مدیر مجتمع"
@@ -501,8 +548,8 @@ function Home() {
             </div>
           </Card>
 
-          <Card className="overflow-hidden rounded-lg border-sky-100 bg-white shadow-sm">
-            <div className="flex h-full flex-row items-end justify-between gap-1">
+          <Card className="min-h-44 overflow-hidden rounded-lg border-sky-100 bg-white shadow-sm md:col-span-2 xl:col-span-1">
+            <div className="flex h-full flex-row items-stretch justify-between gap-1">
               <div className="min-w-0 flex-1 px-4 pt-4 pb-4">
                 <div className="mb-2 flex items-center gap-2 text-primary">
                   <BookOpen className="size-4" />
@@ -518,7 +565,7 @@ function Home() {
                   </Button>
                 </div>
               </div>
-              <div className="h-40 w-28 shrink-0 overflow-hidden rounded-bl-lg self-end">
+              <div className="w-28 shrink-0 self-stretch overflow-hidden rounded-bl-lg">
                 <img
                   src={heroImg}
                   alt="نمای مجتمع آموزشی ایرانیان مسقط"
