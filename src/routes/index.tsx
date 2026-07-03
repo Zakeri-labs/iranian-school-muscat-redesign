@@ -462,13 +462,16 @@ function Home() {
                   <h3 className="font-semibold text-primary">{t}</h3>
                 </div>
                 <ul className="mt-4 space-y-2">
-                  {links.map((l) => (
-                    <li key={l.to}>
+                  {links.map(({ t: label, to }) => (
+                    <li key={to}>
                       <Link
-                        to={l.to}
-                        className="text-sm text-muted-foreground hover:text-brand flex items-center gap-1"
+                        to={to}
+                        className="group/link flex items-center gap-2 text-sm text-muted-foreground hover:text-brand"
                       >
-                        <ChevronLeft className="size-3.5" /> {l.t}
+                        <span>{label}</span>
+                        <span className="inline-flex size-5 shrink-0 items-center justify-center rounded-full border border-border text-primary/70 transition-colors group-hover/link:border-brand/40 group-hover/link:bg-brand group-hover/link:text-brand-foreground">
+                          <ChevronLeft className="size-3" />
+                        </span>
                       </Link>
                     </li>
                   ))}
