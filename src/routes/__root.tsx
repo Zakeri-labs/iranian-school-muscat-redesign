@@ -15,13 +15,17 @@ import { Header, MobileStickyBar } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Toaster } from "@/components/ui/sonner";
 import { site } from "@/lib/site";
+import heroOgImage from "@/assets/hero-image.jpg?url";
 
 const seoTitle = "مجتمع آموزشی ایرانیان مسقط";
 const seoDescription =
   "ثبت‌نام فرزندان ایرانی در مسقط، در محیطی امن، منظم و خانواده‌محور؛ از پایه ابتدایی تا متوسطه، با تمرکز بر آموزش باکیفیت، رشد فردی و آرامش خاطر والدین.";
-const siteUrl = (import.meta.env.VITE_SITE_URL ?? "http://localhost:5173").replace(/\/+$/, "");
+const siteUrl = (import.meta.env.VITE_SITE_URL ?? "https://school-muscat.zakeri.dev").replace(
+  /\/+$/,
+  "",
+);
 const homeUrl = `${siteUrl}/`;
-const ogImageUrl = `${siteUrl}/hero-image.jpg`;
+const ogImageUrl = `${siteUrl}${heroOgImage.startsWith("/") ? heroOgImage : `/${heroOgImage}`}`;
 
 function NotFoundComponent() {
   return (
