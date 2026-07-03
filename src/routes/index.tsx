@@ -274,7 +274,7 @@ function Home() {
                     <div className="absolute -right-2 -top-2 flex size-8 items-center justify-center rounded-full bg-brand text-sm font-extrabold text-brand-foreground shadow-sm ring-[3px] ring-card">
                       {toFa(n)}
                     </div>
-                    <div className="flex size-12 items-center justify-center rounded-xl bg-brand text-brand-foreground shadow-sm sm:size-14">
+                    <div className="flex size-12 items-center justify-center rounded-xl bg-brand-foreground text-brand shadow-sm sm:size-14">
                       <Icon className="size-6 sm:size-7" />
                     </div>
                   </div>
@@ -688,46 +688,57 @@ function Home() {
       <Section>
         <SectionTitle eyebrow="ارتباط" title="راه‌های ارتباطی" />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <Card className="flex min-h-52 flex-col items-center justify-center p-5 text-center">
-            <div className="mb-4 flex size-16 items-center justify-center rounded-full bg-brand/10 text-brand">
-              <SolidPhoneIcon className="size-9" />
+          <Card className="flex min-h-24 items-start gap-3 p-4 text-right">
+            <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand">
+              <SolidPhoneIcon className="size-7" />
             </div>
-            <div className="text-base font-bold text-primary">تلفن مدرسه</div>
-            <div className="mt-2 text-lg font-semibold text-primary" dir="ltr">
-              {site.phone}
-            </div>
-          </Card>
-          <Card className="flex min-h-52 flex-col items-center justify-center p-5 text-center">
-            <div className="mb-4 flex size-16 items-center justify-center rounded-full bg-brand/10 text-brand">
-              <SolidMailIcon className="size-9" />
-            </div>
-            <div className="text-base font-bold text-primary">ایمیل</div>
-            <div className="mt-2 break-all text-base font-semibold leading-7 text-primary">
-              {site.email}
+            <div className="grid min-w-0 flex-1 gap-1">
+              <div className="truncate text-base font-bold text-primary">تلفن مدرسه</div>
+              <div className="min-w-0 truncate text-lg font-semibold text-primary" dir="ltr">
+                {site.phone}
+              </div>
             </div>
           </Card>
-          <Card className="flex min-h-52 flex-col items-center justify-center p-5 text-center">
-            <div className="mb-4 flex size-16 items-center justify-center rounded-full bg-brand/10 text-brand">
-              <SolidLocationIcon className="size-9" />
+          <Card className="flex min-h-24 items-start gap-3 p-4 text-right">
+            <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand">
+              <SolidMailIcon className="size-7" />
             </div>
-            <div className="text-base font-bold text-primary">آدرس</div>
-            <div className="mt-2 text-base font-semibold leading-7 text-primary">
-              {site.address}
+            <div className="grid min-w-0 flex-1 gap-1">
+              <div className="truncate text-base font-bold text-primary">ایمیل</div>
+              <div className="min-w-0 truncate text-base font-semibold text-primary" dir="ltr">
+                {site.email}
+              </div>
             </div>
           </Card>
-          <Card className="flex min-h-52 flex-col items-center justify-center p-5 text-center">
-            <div className="mb-4 flex size-16 items-center justify-center rounded-full bg-brand/10 text-brand">
-              <SolidMapIcon className="size-9" />
+          <Card className="flex min-h-24 items-start gap-3 p-4 text-right">
+            <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand">
+              <SolidLocationIcon className="size-7" />
             </div>
-            <div className="text-base font-bold text-primary">لوکیشن و نقشه</div>
-            <div className="mt-2 text-base font-semibold leading-7 text-primary">
-              {site.address}
+            <div className="grid min-w-0 flex-1 gap-1">
+              <div className="truncate text-base font-bold text-primary">آدرس</div>
+              <div className="min-w-0 text-base font-semibold leading-7 text-primary">
+                {site.address}
+              </div>
             </div>
-            <Button asChild variant="link" className="mt-2 px-0 text-base text-brand">
-              <a href={site.mapUrl} target="_blank" rel="noreferrer">
-                مشاهده نقشه
-              </a>
-            </Button>
+          </Card>
+          <Card className="flex min-h-24 items-start gap-3 p-4 text-right">
+            <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand">
+              <SolidMapIcon className="size-7" />
+            </div>
+            <div className="grid min-w-0 flex-1 gap-1">
+              <div className="truncate text-base font-bold text-primary">لوکیشن و نقشه</div>
+              <div className="flex min-w-0">
+                <Button
+                  asChild
+                  variant="link"
+                  className="h-auto shrink-0 px-0 text-base text-brand"
+                >
+                  <a href={site.mapUrl} target="_blank" rel="noreferrer">
+                    مشاهده نقشه
+                  </a>
+                </Button>
+              </div>
+            </div>
           </Card>
         </div>
       </Section>
