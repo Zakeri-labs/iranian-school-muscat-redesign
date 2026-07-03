@@ -16,6 +16,12 @@ import { Footer } from "@/components/site/Footer";
 import { Toaster } from "@/components/ui/sonner";
 import { site } from "@/lib/site";
 
+const seoTitle = "مجتمع آموزشی ایرانیان مسقط";
+const seoDescription =
+  "ثبت‌نام فرزندان ایرانی در مسقط، در محیطی امن، منظم و خانواده‌محور؛ از پایه ابتدایی تا متوسطه، با تمرکز بر آموزش باکیفیت، رشد فردی و آرامش خاطر والدین.";
+const siteUrl = (import.meta.env.VITE_SITE_URL ?? "http://localhost:5173").replace(/\/+$/, "");
+const homeUrl = `${siteUrl}/`;
+const ogImageUrl = `${siteUrl}/og-image.jpg`;
 
 function NotFoundComponent() {
   return (
@@ -23,9 +29,14 @@ function NotFoundComponent() {
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-primary">۴۰۴</h1>
         <h2 className="mt-4 text-xl font-semibold">صفحه پیدا نشد</h2>
-        <p className="mt-2 text-sm text-muted-foreground">صفحه‌ای که به دنبال آن هستید در دسترس نیست یا جابجا شده است.</p>
+        <p className="mt-2 text-sm text-muted-foreground">
+          صفحه‌ای که به دنبال آن هستید در دسترس نیست یا جابجا شده است.
+        </p>
         <div className="mt-6">
-          <Link to="/" className="inline-flex items-center justify-center rounded-md bg-brand px-4 py-2 text-sm font-medium text-brand-foreground hover:bg-brand/90">
+          <Link
+            to="/"
+            className="inline-flex items-center justify-center rounded-md bg-brand px-4 py-2 text-sm font-medium text-brand-foreground hover:bg-brand/90"
+          >
             بازگشت به خانه
           </Link>
         </div>
@@ -45,15 +56,25 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-[70vh] items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold text-primary">بارگذاری صفحه با مشکل مواجه شد</h1>
-        <p className="mt-2 text-sm text-muted-foreground">لطفاً صفحه را دوباره بارگذاری کنید یا به صفحه اصلی بازگردید.</p>
+        <p className="mt-2 text-sm text-muted-foreground">
+          لطفاً صفحه را دوباره بارگذاری کنید یا به صفحه اصلی بازگردید.
+        </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
-            onClick={() => { router.invalidate(); reset(); }}
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
             className="inline-flex items-center justify-center rounded-md bg-brand px-4 py-2 text-sm font-medium text-brand-foreground hover:bg-brand/90"
           >
             تلاش دوباره
           </button>
-          <a href="/" className="inline-flex items-center justify-center rounded-md border border-input px-4 py-2 text-sm font-medium">بازگشت به خانه</a>
+          <a
+            href="/"
+            className="inline-flex items-center justify-center rounded-md border border-input px-4 py-2 text-sm font-medium"
+          >
+            بازگشت به خانه
+          </a>
         </div>
       </div>
     </div>
@@ -65,20 +86,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: `${site.name} — ${site.descriptor}` },
-      { name: "description", content: `${site.name}؛ مدرسه رسمی ایرانی در مسقط، عمان با مقاطع ابتدایی، متوسطه اول و متوسطه دوم.` },
+      { title: seoTitle },
+      { name: "description", content: seoDescription },
       { property: "og:site_name", content: site.name },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: `${site.name} — ${site.descriptor}` },
-      { property: "og:description", content: `${site.name}؛ مدرسه رسمی ایرانی در مسقط، عمان.` },
+      { property: "og:url", content: homeUrl },
+      { property: "og:title", content: seoTitle },
+      { property: "og:description", content: seoDescription },
+      { property: "og:image", content: ogImageUrl },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: seoTitle },
+      { name: "twitter:description", content: seoDescription },
+      { name: "twitter:image", content: ogImageUrl },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap",
+      },
     ],
     scripts: [
       {
@@ -128,7 +157,6 @@ function RootComponent() {
         <MobileStickyBar />
         <Toaster position="top-center" />
       </div>
-
     </QueryClientProvider>
   );
 }

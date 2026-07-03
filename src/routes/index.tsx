@@ -45,22 +45,6 @@ import schoolLifeImg8 from "@/assets/8.jpg";
 import parentsAccessImg from "@/assets/parents-access.jpg";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: `${site.name} — ${site.descriptor}` },
-      {
-        name: "description",
-        content: `پایگاه رسمی ${site.name}؛ ثبت‌نام، شهریه، اطلاعیه‌ها، تقویم آموزشی و منابع والدین و دانش‌آموزان در مسقط، عمان.`,
-      },
-      { property: "og:title", content: `${site.name}` },
-      {
-        property: "og:description",
-        content: "مدرسه رسمی ایرانی در مسقط، عمان — ابتدایی، متوسطه اول و متوسطه دوم.",
-      },
-      { property: "og:url", content: "/" },
-      { property: "og:type", content: "website" },
-    ],
-  }),
   component: Home,
 });
 
@@ -84,7 +68,9 @@ function Home() {
             <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 backdrop-blur px-3 py-1 text-xs font-medium border border-primary-foreground/20">
               <MapPin className="size-3.5" /> {site.addressShort}
             </div>
-            <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight text-white">{site.name}</h1>
+            <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight text-white">
+              {site.name}
+            </h1>
             <p className="mt-3 text-lg md:text-xl text-primary-foreground/90">{site.tagline}</p>
             <p className="mt-3 text-primary-foreground/80 leading-8 max-w-xl">
               مدرسه رسمی ایرانی برای دانش‌آموزان مقاطع ابتدایی، متوسطه اول و متوسطه دوم در مسقط،
